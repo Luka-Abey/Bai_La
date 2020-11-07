@@ -9,4 +9,11 @@ router.get('/', (req, res) => {
     .then(posts => res.json(posts))
 });
 
+router.post('/', (req, res) => {
+  const newPost = new Post({
+    postBody: req.body.postBody
+  });
+  newPost.save().then(post => res.json(post));
+});
+
 module.exports = router;
