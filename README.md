@@ -19,6 +19,9 @@ No data trading/harvesting.
 ```
 npm i mongoose showdown express nodemon 
 ```
+```
+npm run server
+```
 #### Markdown cheatsheet for posts:
 
 \<del><del>text here</del>\</del>
@@ -26,3 +29,5 @@ npm i mongoose showdown express nodemon
 \# # header text here \## ## smaller header text here \### ### even smaller header text here
 
 \[title](link) [like so](https://www.youtube.com/watch?v=wpV-gGA4PSk&ab_channel=OfficialRickAstleyOfficialRickAstleyOfficialArtistChannel)
+
+\![alt text for accessibility](image.jpg) format images
