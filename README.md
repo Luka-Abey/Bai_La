@@ -14,11 +14,11 @@ No like buttons.
 No data trading/harvesting.
 - Advertising - if we get that far - will be curated, not targeted.
 
-####To run on your machine:
+#### To run on your machine:
 
 ```
 npm i mongoose showdown express nodemon 
 ```
-####Markdown in posts:
+#### Markdown in posts:
 
 \<del>\</del> tags for strike-through
