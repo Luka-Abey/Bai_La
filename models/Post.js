@@ -1,7 +1,7 @@
 const e = require('express');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const User;
+// const User;
 
 // const showdown = require('showdown')
 // converter = new showdown.Converter();
@@ -19,7 +19,7 @@ const User;
 
 const PostSchema = new Schema({
   user: {
-    type: User,
+    type: String,
     required: true
   },
   postBody: {
