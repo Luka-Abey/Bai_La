@@ -9,6 +9,4 @@ router.get('/', (req, res) => {
     .then(posts => res.json(posts))
 });
 
-
-
 module.exports = router;
