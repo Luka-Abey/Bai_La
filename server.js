@@ -7,7 +7,7 @@ const port = 5000
 
 app.use(express.json());
 
-const db = require('keys.js').mongoURI;
+const db = require('./keys.js').mongoURI;
 
 mongoose
   .connect(db)
