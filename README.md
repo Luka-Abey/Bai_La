@@ -30,4 +30,4 @@ npm run server
 
 \[title](link) [like so](https://www.youtube.com/watch?v=wpV-gGA4PSk&ab_channel=OfficialRickAstleyOfficialRickAstleyOfficialArtistChannel)
 
-\![alt text for accessibility](image.jpg) format images
+\!\[alt text for accessibility](image.jpg) format images
