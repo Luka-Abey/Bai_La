@@ -5,7 +5,7 @@ const app = express()
 const port = 5000
 
 app.use(express.json());
-app.use('./api/posts', posts);
+app.use('/api/posts', posts);
 
 const db = require('./keys.js').mongoURI;
 

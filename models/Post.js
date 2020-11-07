@@ -18,17 +18,21 @@ const Schema = mongoose.Schema;
 
 
 const PostSchema = new Schema({
-  user: {
-    type: String,
-    required: true
+  // user: {
+  //   type: String,
+  //   required: true
+  // },
+  // comment: {
+  //   type: String,
+  //   required: false
+  // },
+  date: {
+    type: Date,
+    default: Date.now
   },
   postBody: {
     type: String,
     required: true
-  },
-  comment: {
-    type: String,
-    required: false
   }
 });
 
