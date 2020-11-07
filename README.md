@@ -21,8 +21,8 @@ npm i mongoose showdown express nodemon
 ```
 #### Markdown cheatsheet for posts:
 
-\<del><del>text here</del>\</del> - tags for <del>strike-through</del>
+\<del><del>text here</del>\</del>
 
-\#   # header text here \## ## smaller header text here \### ### even smaller header text here
+\# # header text here \## ## smaller header text here \### ### even smaller header text here
 
 \[title](link) [like so](https://www.youtube.com/watch?v=wpV-gGA4PSk&ab_channel=OfficialRickAstleyOfficialRickAstleyOfficialArtistChannel)
