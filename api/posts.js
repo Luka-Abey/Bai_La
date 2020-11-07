@@ -16,4 +16,9 @@ router.post('/', (req, res) => {
   newPost.save().then(post => res.json(post));
 });
 
+router.delete('/:id', (req, res) => {
+  Post.findById(req.params.id)
+    .then()
+})
+
 module.exports = router;
