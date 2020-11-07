@@ -21,4 +21,4 @@ npm i mongoose showdown express nodemon
 ```
 ####Markdown in posts:
 
-\<del></del> tags for strike-through
+\<del>\</del> tags for strike-through
