@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const Post = require('../models/Post');
+const showdown = require('showdown');
+converter = new showdown.Converter();
 
 router.get('/', (req, res) => {
   Post.find()
@@ -15,6 +17,17 @@ router.post('/', (req, res) => {
   });
   newPost.save().then(post => res.json(post));
 });
+
+
+// app.post("/convert", function(req, res, next) {
+//   if(typeof req.body.content == 'undefined' || req.body.content == null) {
+//       res.json(["error", "No data found"]);
+//   } else {
+//       text = req.body.content;
+//       html = converter.makeHtml(text);
+//       res.json(["markdown", html]);
+//   }
+// });
 
 router.delete('/:id', (req, res) => {
   Post.findById(req.params.id)
