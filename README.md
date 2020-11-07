@@ -21,7 +21,7 @@ npm i mongoose showdown express nodemon
 ```
 #### Markdown cheatsheet for posts:
 
-\<del>text here\</del> - tags for <del>strike-through</del>
+\<del><del>text here</del>\</del> - tags for <del>strike-through</del>
 
 \#   # header text here \## ## smaller header text here \### ### even smaller header text here
 
