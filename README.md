@@ -19,6 +19,8 @@ No data trading/harvesting.
 ```
 npm i mongoose showdown express nodemon 
 ```
-#### Markdown in posts:
+#### Markdown cheatsheet for posts:
 
-\<del>\</del> tags for strike-through
+\<del>text here\</del> - tags for <del>strike-through</del>
+\# # header text here \## ## smaller header text here \### ### even smaller header text here
+\  
