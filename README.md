@@ -14,10 +14,10 @@ No like buttons.
 No data trading/harvesting.
 - Advertising - if we get that far - will be curated, not targeted.
 
-#### To run on your machine:
+#### To set up on your machine:
 
 ```
-npm i mongoose showdown express nodemon 
+npm i mongoose showdown express nodemon client-install 
 ```
 ```
 npm run server
