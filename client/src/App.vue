@@ -38,7 +38,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   padding-top: 30px;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 
 body { 

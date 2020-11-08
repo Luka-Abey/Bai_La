@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>not a social media site</h1>
+    <h1>not a social media site <img src="../../public/na.png"> </h1>
     <div v-bind:key="post.id" v-for="post in posts">
       <PostItem v-html="post.postBody" />
       <span v-if="typeof post.video !== 'undefined'">
