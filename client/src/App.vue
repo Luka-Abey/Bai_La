@@ -1,29 +1,32 @@
 <template>
   <div id="app">
-    <Posts />
+    <Posts v-bind:posts="posts" />
   </div>
 </template>
 
 <script>
 import Posts from './components/Posts.vue';
-// import axios from 'axios';
-
+import axios from 'axios';
 
 export default {
   name: 'App',
   components: {
     Posts
+  },
+  data() {
+    return {
+      posts: [
+        {
+          postBody: "this is a post"
+        }
+      ]
+    }
+  },
+  created() {
+    axios.get('http://localhost:5000/api/posts')
+      .then(res => this.posts = res.data)
+      .catch(err => console.log(err));
   }
-  // data() {
-  //   return {
-  //     posts: []
-  //   }
-  // },
-  // created() {
-  //   axios.get('http://localhost:5000/api/posts')
-  //     .then(res => this.posts = res.data)
-  //     .catch(err => console.log(err));
-  // }
 }
 
 
