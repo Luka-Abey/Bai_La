@@ -6,16 +6,19 @@ const CommentSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: "User"
-
   },
-  password: {
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  commentBody: {
     type: String,
     required: true
   },
-  email: {
-    type: String,
-    required: true
+  post: {
+    type: Schema.Types.ObjectId,
+    ref: "Post"
   }
 });
 
-module.exports = Post = mongoose.model('post', PostSchema);
+module.exports = Comment = mongoose.model('comment', CommentSchema);
