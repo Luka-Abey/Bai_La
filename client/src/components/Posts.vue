@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import PostItem from './PostItem.vue'
 
 export default {
   name: "Posts",
