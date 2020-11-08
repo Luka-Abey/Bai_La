@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios';
 
 
@@ -20,7 +20,10 @@ export default {
     }
   },
   created() {
-
+    axios.get('http://localhost:5000/api/posts')
+      .then(res => this.posts = res.data)
+      .catch(err => console.log(err));
+  }
 }
 
 
