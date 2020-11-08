@@ -38,11 +38,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 100px;
 }
 
 body { 
-    animation: fadeInAnimation ease 2s ;
+    animation: fadeInAnimation ease 3s ;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
 } 
