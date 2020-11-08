@@ -6,9 +6,8 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
-    trim: true
-    // UNIQUE - WHERE DO WE CHECK THIS??
-    // AT THE EMAIL?? unique usernames make more sense
+    trim: true,
+    unique: true
     },
   password: {
     type: String,
