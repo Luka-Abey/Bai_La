@@ -19,8 +19,8 @@ export default {
     }
   },
   created() {
-    axios.get('http://localhost:5000/api/posts')
-      .then(res => console.log(res))
+    axios.get(`http://localhost:5000/api/posts`)
+      .then(res => this.posts = res.data)
       .catch(err => console.log(err));
   }
 }

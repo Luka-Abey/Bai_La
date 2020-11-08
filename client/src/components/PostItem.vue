@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{post.postBody}}
+    {{post}}
   </div>
 </template>
 
