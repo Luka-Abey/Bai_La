@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const router = require('./posts');
 
 router.get('/', (req, res) => {
   User.find()
@@ -13,5 +12,17 @@ router.post('/', (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password
-  })
+  });
+  newUser.save().then(post => res.json(post));
+});
+
+router.delete('/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(user => 
+      user.remove()
+    .then(() => res.json({ success: true }))
+    )
+    .catch(err => res.status(404).json({ success: false }));
 })
+
+module.exports = router;
