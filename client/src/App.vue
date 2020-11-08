@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Posts />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import axios from 'axios';
+import Posts from './components/Posts.vue';
+// import axios from 'axios';
 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  },
-  data() {
-    return {
-      posts: []
-    }
-  },
-  created() {
-    axios.get('http://localhost:5000/api/posts')
-      .then(res => this.posts = res.data)
-      .catch(err => console.log(err));
+    Posts
   }
+  // data() {
+  //   return {
+  //     posts: []
+  //   }
+  // },
+  // created() {
+  //   axios.get('http://localhost:5000/api/posts')
+  //     .then(res => this.posts = res.data)
+  //     .catch(err => console.log(err));
+  // }
 }
 
 
