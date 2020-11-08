@@ -30,11 +30,13 @@ export default {
 
 <style>
 #app {
+  background-color: rgb(250, 235, 215);
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 </style>
