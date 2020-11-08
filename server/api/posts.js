@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const newPost = new Post({
+    user: req.body.user,
     postBody: converter.makeHtml(req.body.postBody)
   });
   newPost.save().then(post => res.json(post));

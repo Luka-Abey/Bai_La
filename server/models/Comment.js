@@ -2,19 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PostSchema = new Schema({
+const CommentSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: "User"
+
   },
-  date: {
-    type: Date,
-    default: Date.now
+  password: {
+    type: String,
+    required: true
   },
-  postBody: {
+  email: {
     type: String,
     required: true
   }
 });
 
-module.exports = Post = mongoose.model('post', PostSchema); 
+module.exports = Post = mongoose.model('post', PostSchema);

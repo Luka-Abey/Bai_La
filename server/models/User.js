@@ -8,12 +8,16 @@ const UserSchema = new Schema({
     required: true,
     trim: true
     // UNIQUE - WHERE DO WE CHECK THIS??
-    // AT THE EMAIL?? unique usernames makes more sense
+    // AT THE EMAIL?? unique usernames make more sense
     },
   password: {
+    type: String,
+    required: true
+  },
+  email: {
     type: String,
     required: true
   }
 });
 
-module.exports = Post = mongoose.model('post', PostSchema);
+module.exports = User = mongoose.model('user', UserSchema);
