@@ -31,6 +31,7 @@ export default {
 <style>
 #app {
   background-color: rgb(250, 235, 215);
+  height: fit-content;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,4 +40,19 @@ export default {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+body { 
+    animation: fadeInAnimation ease 2s ;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+} 
+  
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
 </style>
