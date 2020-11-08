@@ -11,7 +11,7 @@ const port = 5000
 const db = require('./keys.js').mongoURI;
 
 mongoose
-  .connect(db, { })
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log('Mongo db connected...'))
   .catch(err => console.log(err))
 
