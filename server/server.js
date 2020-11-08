@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const posts = require('./api/posts');
-const users = require('./api/users');
+const comments = require('./api/comments');
 const app = express()
 const port = 5000
 
 app.use(express.json());
+app.use('/api/comments', comments)
 app.use('/api/posts', posts);
 
 const db = require('./keys.js').mongoURI;

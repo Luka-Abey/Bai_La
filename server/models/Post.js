@@ -7,6 +7,10 @@ const PostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
   },
+  video: {
+    type: String,
+    required: false
+  },
   date: {
     type: Date,
     default: Date.now
@@ -14,13 +18,7 @@ const PostSchema = new Schema({
   postBody: {
     type: String,
     required: true
-  },
-  comments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Comment"
-    }
-  ]
+  }
 });
 
 module.exports = Post = mongoose.model('post', PostSchema); 
