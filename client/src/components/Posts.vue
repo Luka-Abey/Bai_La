@@ -2,7 +2,7 @@
   <div>
     <h1>not a social media site</h1>
     <div v-bind:key="post.id" v-for="post in posts">
-      {{post.postBody}}
+      <PostItem v-bind:post="post" />
     </div>
   </div>
 </template>
@@ -12,6 +12,9 @@ import PostItem from './PostItem.vue'
 
 export default {
   name: "Posts",
+  components: {
+    PostItem
+    },
   props: ["posts"]
 }
 </script>

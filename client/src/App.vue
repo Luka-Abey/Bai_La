@@ -15,16 +15,12 @@ export default {
   },
   data() {
     return {
-      posts: [
-        {
-          postBody: "this is a post"
-        }
-      ]
+      posts: []
     }
   },
   created() {
     axios.get('http://localhost:5000/api/posts')
-      .then(res => this.posts = res.data)
+      .then(res => console.log(res))
       .catch(err => console.log(err));
   }
 }

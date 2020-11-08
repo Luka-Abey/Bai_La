@@ -1,11 +1,12 @@
 <template>
   <div>
-    Post Item
+    {{post.postBody}}
   </div>
 </template>
 
 <script>
 export default {
-  name: "PostItem"
+  name: "PostItem",
+  props: ["post"]
 }
 </script>
