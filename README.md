@@ -30,7 +30,7 @@ cd ..
 ```
 npm run dev
 ```
-runs both the server and client concurrently
+Clones the project to your machine and runs both the server and client concurrently.
 ### Markdown cheatsheet for posts:
 
 <h4>#s for varying levels of headers</h4>
