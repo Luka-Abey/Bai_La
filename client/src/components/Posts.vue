@@ -9,7 +9,9 @@
       </span>
       <hr>    
       <div v-bind:key="comment.id" v-for="comment in comments">
+        <div v-if="post._id == comment.post">
         <Comments v-html="comment.commentBody" />
+        </div>
       </div>
     </div>
   </div>
@@ -27,13 +29,25 @@ export default {
     PostItem,
     Comments
     },
-  props: ["posts", "comments"],
+  props: ["posts"],
 
+  data(){
+    return {
+      comments: []
+    }
+  },
   created() {
     axios.get(`${url}comments`)
       .then(res => this.comments = res.data)
       .catch(err => console.log(err));
   }
+
+  // computed: {
+  //   commentByPost() {
+  //     return this.comments.post == this.post._id
+  //   }
+  // }
+
 
 }
 </script>
