@@ -59,22 +59,6 @@ body {
      } 
 } 
 
-hr {
-  width: 400px;
-  opacity: 0.3;
-  }
-
-.thick-line {
-  width: 600px;
-  opacity: 0.9;
-}
-
-.centerize {
-  margin: auto;
-  width: 100%;
-  display: block;
-}
-
 h2, h3 {
   opacity: 0.8;
   }
@@ -86,14 +70,6 @@ h2, h3 {
   padding-right: 1.5rem;
   }
 
-.comment-text {
-  font-size: 20px;
-  text-align: left;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  width:750px;
-}
-
 .post {
   display: flex;
   flex-direction:column;
@@ -102,15 +78,24 @@ h2, h3 {
 
 .comment {
   background-color: rgb(255, 252, 208);
-  width: 800px;
-  display: flex;
-  justify-content: flex-start;
 }
 
-.page {
-  margin: auto;
+.comment-text {
+  font-size: 20px;
+  text-align: left;
+  min-width: 100%;
   max-width: 800px;
-  width: 80%;
+  margin-right: auto;
+}
+
+hr {
+  width: 400px;
+  opacity: 0.3;
+  }
+
+.thick-line {
+  width: 600px;
+  opacity: 0.9;
 }
 
 </style>
