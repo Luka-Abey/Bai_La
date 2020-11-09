@@ -15,7 +15,9 @@ No data trading/harvesting.
 - Advertising - if we get that far - will be curated, not targeted.
 
 ### To set up on your machine:
-
+```
+git clone https://github.com/Luka-Abey/socialLife.git
+```
 ```
 npm i
 ```
