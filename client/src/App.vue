@@ -64,12 +64,21 @@ hr {
   opacity: 0.3;
   }
 
+.thick-line {
+  width: 600px;
+  opacity: 0.9;
+}
+
 h2, h3 {
   opacity: 0.8;
   }
 
 .post-text {
-  font-size: 50px;
+  font-size: 24px;
+  }
+
+.comment-text {
+  font-size: 20px;
 }
 
 </style>

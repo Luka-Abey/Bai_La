@@ -2,17 +2,18 @@
   <div>
     <h1>not a social media site <img src="../../public/na.png"> </h1>
     <div v-bind:key="post.id" v-for="post in posts">
-      <PostItem className ="post-text" v-html="post.postBody"/>
-      <PostItem v-text="post.date" />
+      <PostItem class = "post-text" v-html="post.postBody"/>
       <span v-if="typeof post.video !== 'undefined'">
         <PostItem v-html="post.video" />
       </span>
       <hr>    
       <div v-bind:key="comment.id" v-for="comment in comments">
         <div v-if="post._id == comment.post">
-        <Comments v-html="comment.commentBody" />
+        <Comments class ="comment-text" v-html="comment.commentBody" />
+        <hr>
         </div>
       </div>
+      <hr class="thick-line">
     </div>
   </div>
 </template>
@@ -41,13 +42,5 @@ export default {
       .then(res => this.comments = res.data)
       .catch(err => console.log(err));
   }
-
-  // computed: {
-  //   commentByPost() {
-  //     return this.comments.post == this.post._id
-  //   }
-  // }
-
-
 }
 </script>
