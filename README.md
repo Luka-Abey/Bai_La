@@ -1,7 +1,7 @@
-#### Not really a social media site
+### Not really a social media site
 
 
-#### Key changes to standard social media model:
+### Key changes to standard social media model:
 
 No addictive infinite scroll.
 - How many posts do you want to scroll for? Use our service, and get back to living your life. 
@@ -14,7 +14,7 @@ No like buttons.
 No data trading/harvesting.
 - Advertising - if we get that far - will be curated, not targeted.
 
-#### To set up on your machine:
+### To set up on your machine:
 
 ```
 npm i
@@ -29,7 +29,7 @@ cd ..
 npm run dev
 ```
 runs both the server and client concurrently
-#### Markdown cheatsheet for posts:
+### Markdown cheatsheet for posts:
 
 <h4>#s for varying levels of headers</h4>
 
@@ -41,5 +41,5 @@ runs both the server and client concurrently
 
 And many more, look into [markdown](https://www.markdownguide.org/cheat-sheet) or just use html elements :octocat:
 
-#### Contributions
-This project aims to be as open sourcable as possible. Feel free to open any issues, and send PRs. Check the project boards for the current todos.
+### Contributions
+This project aims to be open source and community led. Feel free to open any issues, and send PRs. Check the [projects](https://github.com/Luka-Abey/socialLife/projects/1) tab for the current todos.
