@@ -61,7 +61,6 @@ body {
 
 hr {
   width: 400px;
-  /* opacity: 0.9;  */
   opacity: 0.3;
   }
 
@@ -92,7 +91,7 @@ h2, h3 {
   text-align: left;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  width:800px;
+  width:750px;
 }
 
 .post {
@@ -106,6 +105,12 @@ h2, h3 {
   width: 800px;
   display: flex;
   justify-content: flex-start;
+}
+
+.page {
+  margin: auto;
+  max-width: 800px;
+  width: 80%;
 }
 
 </style>

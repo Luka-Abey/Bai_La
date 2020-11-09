@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <h1>not a social media site <img src="../../public/na.png"> </h1>
     <div class = "post" v-bind:key="post.id" v-for="post in posts">
       <PostItem class = "post-text" v-html="post.postBody"/>
