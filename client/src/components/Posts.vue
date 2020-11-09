@@ -2,7 +2,8 @@
   <div>
     <h1>not a social media site <img src="../../public/na.png"> </h1>
     <div v-bind:key="post.id" v-for="post in posts">
-      <PostItem v-html="post.postBody"/>
+      <PostItem className ="post-text" v-html="post.postBody"/>
+      <PostItem v-text="post.date" />
       <span v-if="typeof post.video !== 'undefined'">
         <PostItem v-html="post.video" />
       </span>

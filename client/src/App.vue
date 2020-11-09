@@ -61,4 +61,12 @@ hr {
   opacity: 0.3;
   }
 
+h2, h3 {
+  opacity: 0.8;
+  }
+
+.post-text {
+  font-size: 50px;
+}
+
 </style>

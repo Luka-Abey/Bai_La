@@ -17,17 +17,29 @@ No data trading/harvesting.
 #### To set up on your machine:
 
 ```
-npm i mongoose showdown express nodemon client-install 
+npm i
 ```
 ```
-npm run server
+cd client && npm i
 ```
+```
+cd ..
+```
+```
+npm run dev
+```
+runs both the server and client concurrently
 #### Markdown cheatsheet for posts:
-
-\<del><del>text here</del>\</del>
 
 <h4>#s for varying levels of headers</h4>
 
 \[title](link) [like so](https://www.youtube.com/watch?v=wpV-gGA4PSk&ab_channel=OfficialRickAstleyOfficialRickAstleyOfficialArtistChannel)
 
 \!\[alt text for accessibility](image.jpg) format images
+
+\<del><del>text here</del>\</del>
+
+And many more, look into [markdown](https://www.markdownguide.org/cheat-sheet) or just use html elements :octocat:
+
+#### Contributions
+This project aims to be as open sourcable as possible. Feel free to open any issues, and send PRs. Check the project boards for the current todos.
