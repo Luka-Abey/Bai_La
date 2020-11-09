@@ -57,7 +57,7 @@ body {
 } 
 
 hr {
-  width: 500px;
+  width: 400px;
   opacity: 0.4;
   }
 
