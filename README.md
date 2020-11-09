@@ -31,6 +31,10 @@ cd ..
 npm run dev
 ```
 Clones the project to your machine and runs both the server and client concurrently.
+
+### Built with:
+MEVN stack, mongoose, axios, showdown, nodemon, atlas, kanban, github
+
 ### Markdown cheatsheet for posts:
 
 <h4>#s for varying levels of headers</h4>
@@ -43,5 +47,5 @@ Clones the project to your machine and runs both the server and client concurren
 
 And many more, look into [markdown](https://www.markdownguide.org/cheat-sheet) or just use html elements :octocat:
 
-### Contributions
+### Contributions:
 This project aims to be open source and community led. Feel free to open any issues, and send PRs. Check the [projects](https://github.com/Luka-Abey/socialLife/projects/1) tab for the current todos.
