@@ -55,4 +55,10 @@ body {
         opacity: 1; 
      } 
 } 
+
+hr {
+  width: 500px;
+  opacity: 0.4;
+  }
+
 </style>
