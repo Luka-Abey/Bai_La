@@ -61,12 +61,18 @@ body {
 
 hr {
   width: 400px;
+  /* opacity: 0.9;  */
   opacity: 0.3;
+  /* align-self: left; */
   }
 
 .thick-line {
   width: 600px;
   opacity: 0.9;
+}
+
+.centerize {
+  margin: auto;
 }
 
 h2, h3 {
@@ -75,10 +81,29 @@ h2, h3 {
 
 .post-text {
   font-size: 24px;
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   }
 
 .comment-text {
   font-size: 20px;
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.post {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.comment {
+  background-color: rgb(255, 252, 208);
+  width: 800px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 </style>

@@ -1,16 +1,18 @@
 <template>
   <div>
     <h1>not a social media site <img src="../../public/na.png"> </h1>
-    <div v-bind:key="post.id" v-for="post in posts">
+    <div class = "post" v-bind:key="post.id" v-for="post in posts">
       <PostItem class = "post-text" v-html="post.postBody"/>
       <span v-if="typeof post.video !== 'undefined'">
         <PostItem v-html="post.video" />
       </span>
       <hr>    
-      <div v-bind:key="comment.id" v-for="comment in comments">
+      <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
-        <hr>
+          <div class="centerize">
+            <hr>
+          </div>
         </div>
       </div>
       <hr class="thick-line">
