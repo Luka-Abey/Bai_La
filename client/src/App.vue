@@ -63,7 +63,6 @@ hr {
   width: 400px;
   /* opacity: 0.9;  */
   opacity: 0.3;
-  /* align-self: left; */
   }
 
 .thick-line {
@@ -73,6 +72,8 @@ hr {
 
 .centerize {
   margin: auto;
+  width: 100%;
+  display: block;
 }
 
 h2, h3 {
@@ -91,6 +92,7 @@ h2, h3 {
   text-align: left;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  width:800px;
 }
 
 .post {
