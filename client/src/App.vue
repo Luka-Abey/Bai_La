@@ -1,26 +1,36 @@
 <template>
   <div id="app">
     <Posts v-bind:posts="posts" />
+    <Comments v-bind:comments="comments" />
   </div>
 </template>
 
 <script>
 import Posts from './components/Posts.vue';
+import Comments from './components/Comments.vue';
 import axios from 'axios';
+
+const url = 'http://localhost:5000/api/';
 
 export default {
   name: 'App',
   components: {
-    Posts
+    Posts,
+    Comments
   },
   data() {
     return {
-      posts: []
+      posts: [],
+      comments: []
     }
   },
   created() {
-    axios.get(`http://localhost:5000/api/posts`)
+    axios.get(`${url}posts`)
       .then(res => this.posts = res.data)
+      .catch(err => console.log(err));
+
+    axios.get(`${url}comments`)
+      .then(res => this.comments = res.data)
       .catch(err => console.log(err));
   }
 }
