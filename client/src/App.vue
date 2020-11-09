@@ -58,7 +58,7 @@ body {
 
 hr {
   width: 400px;
-  opacity: 0.4;
+  opacity: 0.3;
   }
 
 </style>
