@@ -9,7 +9,7 @@
       </span>
       <hr>    
       <div v-bind:key="comment.id" v-for="comment in comments">
-        <CommentItem v-html="comment.commentBody" />
+        <Comments v-html="comment.commentBody" />
       </div>
     </div>
   </div>
@@ -17,15 +17,23 @@
 
 <script>
 import PostItem from './PostItem.vue';
-import CommentItem from './CommentItem.vue';
+import Comments from './Comments.vue';
+import axios from 'axios';
+const url = 'http://localhost:5000/api/';
 
 export default {
   name: "Posts",
   components: {
     PostItem,
-    CommentItem
+    Comments
     },
-  props: ["posts", "comments"]
+  props: ["posts", "comments"],
+
+  created() {
+    axios.get(`${url}comments`)
+      .then(res => this.comments = res.data)
+      .catch(err => console.log(err));
+  }
 
 }
 </script>
