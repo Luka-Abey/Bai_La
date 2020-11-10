@@ -1,12 +1,13 @@
 <template>
   <div class="page">
     <h1>not a social media site <img src="../../public/na.png"> </h1>
-    <div class="input-form">
-    <input type ="text" v-model="newPost">
-    {{newPost}}
-    <button type = "submit" name="button">Post</button>
-    </div>
-
+    <form @submit.prevent="sendPost">
+      <div class="input-form">
+        <input type ="text" v-model="newPost" placeholder="Write here!">
+        <input type="text" v-model="newVideo" placeholder="Video ID links here!">
+        <button type = "submit" name="button">Post</button>
+      </div>
+    </form>
     <div class = "post" v-bind:key="post.id" v-for="post in posts">
       <PostItem class = "post-text" v-html="post.postBody"/>
       <span v-if="typeof post.video !== 'undefined'">
@@ -43,7 +44,27 @@ export default {
   data(){
     return {
       comments: [],
-      newPost: ''
+      newPost: '',
+      newVideo: null
+    }
+  },
+  methods: {
+    sendPost() {
+      if (this.video == null) {
+        axios.post(`${url}posts`, {
+        postBody: this.newPost
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+      }
+      else {
+      axios.post(`${url}posts`, {
+        postBody: this.newPost,
+        video: this.newVideo
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+      }
     }
   },
   created() {
