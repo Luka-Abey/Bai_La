@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <h1>not a social media site <img src="../../public/na.png"> </h1>
-    <form @submit.prevent="sendPost">
+    <form @submit.prevent="sendPost" class="input-form">
       <div class="input-form">
         <input type ="text" v-model="newPost" placeholder="Write here!">
         <input type="text" v-model="newVideo" placeholder="Video ID links here!">
@@ -70,7 +70,7 @@ export default {
         post: refPost,
         commentBody: this.newComment
       })
-      .then(res => console.log(res))
+      .then(this.newComment = '')
         .catch(err => console.log(err));
     }
   },

@@ -115,8 +115,6 @@ input {
     opacity: 0.5;
     font-size: 20px;
     border: 0ch;
-    margin-left: 10px;
-    text-align: 10px;
 }
 
 </style>
