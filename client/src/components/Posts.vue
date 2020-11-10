@@ -14,6 +14,12 @@
         <PostItem v-html="post.video" />
       </span>
       <hr>    
+      <form @submit.prevent="sendComment(post._id)">
+      <div class="input-form">
+        <input type ="text" v-model="newComment" placeholder="Write comment here!">
+        <button type = "submit" name="button">Post</button>
+      </div>
+    </form>
       <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
@@ -45,26 +51,27 @@ export default {
     return {
       comments: [],
       newPost: '',
-      newVideo: ''
+      newVideo: '',
+      newComment: ``
     }
   },
   methods: {
     sendPost() {
-      if (this.newVideo == '') {
-        axios.post(`${url}posts`, {
-        postBody: this.newPost
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-      }
-      else {
       axios.post(`${url}posts`, {
         postBody: this.newPost,
         video: this.newVideo
         })
         .then(res => console.log(res))
         .catch(err => console.log(err));
-      }
+    },
+
+    sendComment(refPost){
+      axios.post(`${url}comments`, {
+        post: refPost,
+        commentBody: this.newComment
+      })
+      .then(res => console.log(res))
+        .catch(err => console.log(err));
     }
   },
   created() {
