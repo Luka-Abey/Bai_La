@@ -1,20 +1,19 @@
 <template>
   <div id="app">
     <Posts v-bind:posts="posts" />
-    
   </div>
 </template>
 
 <script>
-import Posts from './components/Posts.vue';
-import axios from 'axios';
+import Posts from './components/Posts.vue'
+import axios from 'axios'
 
-const url = 'http://localhost:5000/api/';
+const url = 'http://localhost:5000/api/'
 
 export default {
   name: 'App',
   components: {
-    Posts  
+    Posts
   },
   data() {
     return {
@@ -22,13 +21,12 @@ export default {
     }
   },
   created() {
-    axios.get(`${url}posts`)
-      .then(res => this.posts = res.data)
-      .catch(err => console.log(err));
+    axios
+      .get(`${url}posts`)
+      .then(res => (this.posts = res.data))
+      .catch(err => console.log(err))
   }
 }
-
-
 </script>
 
 <style>
@@ -44,40 +42,52 @@ export default {
   padding-bottom: 150px;
 }
 
-body { 
-    animation: fadeInAnimation ease 3s ;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; 
-} 
-  
-@keyframes fadeInAnimation { 
-    0% { 
-        opacity: 0; 
-    } 
-    100% { 
-        opacity: 1; 
-     } 
-} 
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
-h2, h3 {
-  opacity: 0.8;
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
+
+h2,
+h3 {
+  opacity: 0.8;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .post-text {
   font-size: 24px;
   text-align: left;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  }
+}
 
 .post {
-  display: flex;
-  flex-direction:column;
+  display: block;
+  flex-direction: column;
   align-items: center;
+  width: 80%;
+  max-width: 800px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .comment {
-  background-color: rgb(255, 252, 208);
+  text-align: left;
+  max-width: 100%;
+  display: block;
 }
 
 .comment-text {
@@ -91,11 +101,10 @@ h2, h3 {
 hr {
   width: 400px;
   opacity: 0.3;
-  }
+}
 
 .thick-line {
   width: 600px;
   opacity: 0.9;
 }
-
 </style>
