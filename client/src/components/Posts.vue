@@ -45,12 +45,12 @@ export default {
     return {
       comments: [],
       newPost: '',
-      newVideo: null
+      newVideo: ''
     }
   },
   methods: {
     sendPost() {
-      if (this.video == null) {
+      if (this.newVideo == '') {
         axios.post(`${url}posts`, {
         postBody: this.newPost
         })
