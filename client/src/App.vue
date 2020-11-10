@@ -107,4 +107,16 @@ hr {
   width: 600px;
   opacity: 0.9;
 }
+
+
+input {
+    width: 100%;
+    height: 30px;
+    opacity: 0.5;
+    font-size: 20px;
+    border: 0ch;
+    margin-left: 10px;
+    text-align: 10px;
+}
+
 </style>
