@@ -19,7 +19,7 @@
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
         <div>
-          <button class="btn-warning" type="submit">X</button>
+          <button v-on:click="deleteComment(comment._id)" class="btn-warning" type="submit">X</button>
         </div>
         <hr>
         </div>
@@ -61,9 +61,9 @@ export default {
     sendPost() {
       axios.post(`${url}posts`, {
         postBody: this.newPost,
-        video: this.newVideo
-        })
+        video: this.newVideo        })
         .then(res => console.log(res))
+
         .catch(err => console.log(err));
     },
 
@@ -74,6 +74,10 @@ export default {
       })
       .then(this.newComment = '')
         .catch(err => console.log(err));
+    },
+
+    deleteComment(refComment){
+      axios.delete(`${url}comments/${refComment}`)
     }
   },
   created() {

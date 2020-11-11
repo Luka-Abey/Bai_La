@@ -119,6 +119,7 @@ input {
     opacity: 0.5;
     font-size: 20px;
     border: 0ch;
+    display: inline-block;
 }
 
 button {
@@ -131,6 +132,7 @@ button {
   justify-content: right;
   width:50px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn-warning {
