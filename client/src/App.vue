@@ -129,8 +129,12 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: right;
-  width:10%;
+  width:50px;
   border-radius: 5px;
+}
+
+.btn-warning {
+  width: 40px;
 }
 
 </style>
