@@ -17,13 +17,16 @@
       <form @submit.prevent="sendComment(post._id)">
       <div class="input-form">
         <input type ="text" v-model="newComment" placeholder="Write comment here!">
-        <button type = "submit" name="button">Post</button>
+        <button type = "submit">Post</button>
+
       </div>
     </form>
       <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
-
+        <div>
+          <button class="btn-warning" type="submit">X</button>
+        </div>
         </div>
       </div>
       <hr class="thick-line">

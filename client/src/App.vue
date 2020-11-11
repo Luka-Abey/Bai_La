@@ -31,7 +31,7 @@ export default {
 
 <style>
 #app {
-  background-color: rgb(250, 235, 215);
+  background-color: rgb(255, 226, 189);
   height: fit-content;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -90,6 +90,10 @@ h3 {
   display: block;
 }
 
+iframe {
+  width: 100%;
+}
+
 .comment-text {
   font-size: 20px;
   text-align: left;
@@ -115,6 +119,18 @@ input {
     opacity: 0.5;
     font-size: 20px;
     border: 0ch;
+}
+
+button {
+  color: rgb(255, 226, 189);
+  background-color: #2c3e50;
+  opacity: 0.8;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: right;
+  width:10%;
+  border-radius: 5px;
 }
 
 </style>
