@@ -23,9 +23,7 @@
       <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
-          <div class="centerize">
-            <hr>
-          </div>
+
         </div>
       </div>
       <hr class="thick-line">
