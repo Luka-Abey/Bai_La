@@ -61,9 +61,8 @@ export default {
     sendPost() {
       axios.post(`${url}posts`, {
         postBody: this.newPost,
-        video: this.newVideo        })
+        video: this.newVideo})
         .then(res => console.log(res))
-
         .catch(err => console.log(err));
     },
 
