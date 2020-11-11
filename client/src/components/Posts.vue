@@ -19,7 +19,7 @@
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
         <div>
-          <button v-on:click="deleteComment(comment._id)" class="btn-warning" type="submit">X</button>
+          <button v-on:click="deleteComment(comment._id)" class="btn-warning" type="submit"><img src='../../public/bin.png'></button>
         </div>
         <hr>
         </div>

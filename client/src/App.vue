@@ -136,7 +136,8 @@ button {
 }
 
 .btn-warning {
-  width: 40px;
+  width: 35px;
+  height: 30px;
   background-color: #502c2c;
 }
 
@@ -147,7 +148,6 @@ button {
 .btn-send {
   height: 30px;
   width: 35px;
-
 }
 
 </style>
