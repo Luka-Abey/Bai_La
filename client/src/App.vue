@@ -87,7 +87,7 @@ h3 {
 .comment {
   text-align: left;
   max-width: 100%;
-  display: block;
+  display: inline;
 }
 
 iframe {
@@ -126,9 +126,9 @@ button {
   color: rgb(255, 226, 189);
   background-color: #2c3e50;
   opacity: 0.9;
-  display: block;
+  display: inline;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: right;
   width:50px;
   border-radius: 5px;
