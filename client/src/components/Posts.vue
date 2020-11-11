@@ -77,6 +77,8 @@ export default {
 
     deleteComment(refComment){
       axios.delete(`${url}comments/${refComment}`)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
     }
   },
   created() {
