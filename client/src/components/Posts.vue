@@ -5,7 +5,7 @@
       <div class="input-form">
         <input type ="text" v-model="newPost" placeholder="Write here!">
         <input type="text" v-model="newVideo" placeholder="Video ID links here!">
-        <button type = "submit" name="button">Post</button>
+        <button type = "submit" name="button" class="btn-send"><img src='../../public/send.png'></button>
       </div>
     </form>
     <div class = "post" v-bind:key="post.id" v-for="post in posts">
