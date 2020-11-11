@@ -103,12 +103,12 @@ iframe {
 }
 
 hr {
-  width: 400px;
+  width: 50%;
   opacity: 0.3;
 }
 
 .thick-line {
-  width: 600px;
+  width: 70%;
   opacity: 0.9;
 }
 
@@ -125,7 +125,7 @@ input {
 button {
   color: rgb(255, 226, 189);
   background-color: #2c3e50;
-  opacity: 0.8;
+  opacity: 0.9;
   display: block;
   flex-direction: column;
   align-items: center;
@@ -137,6 +137,17 @@ button {
 
 .btn-warning {
   width: 40px;
+  background-color: #502c2c;
+}
+
+.btn-edit {
+  background-color: #37502c;
+}
+
+.btn-send {
+  height: 30px;
+  width: 35px;
+
 }
 
 </style>

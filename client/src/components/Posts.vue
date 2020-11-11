@@ -27,7 +27,7 @@
       <form @submit.prevent="sendComment(post._id)">
         <div class="input-form">
           <input type ="text" v-model="newComment" placeholder="Write comment here!">
-          <button type = "submit">Post</button>
+          <button type = "submit" class="btn-send"><img src='../../public/send.png'></button>
         </div>
       </form>
       <hr class="thick-line">
