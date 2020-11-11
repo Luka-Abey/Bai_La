@@ -19,9 +19,9 @@
       <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
-        <div>
-          <button v-on:click="deleteComment(comment._id)" class="btn-warning"><img src='../../public/bin.png'></button>
-        </div>
+          <div>
+            <button v-on:click="deleteComment(comment._id)" class="btn-warning"><img src='../../public/bin.png'></button>
+          </div>
         <hr>
         </div>
       </div>
