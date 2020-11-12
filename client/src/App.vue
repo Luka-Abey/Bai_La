@@ -20,6 +20,7 @@
   color: #2c3e50;
   padding-top: 30px;
   padding-bottom: 150px;
+  
 }
 
 body {
@@ -143,4 +144,14 @@ button {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.about {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+li {
+  text-align: left;
+}
+
 </style>
