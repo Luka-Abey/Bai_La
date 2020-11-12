@@ -58,20 +58,24 @@ export default {
     }
   },
   methods: {
-    sendPost() {
-      axios.post(`${url}posts`, {
-        postBody: this.newPost,
-        video: this.newVideo.trim()})
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+    getComments(){
+      axios.get(`${url}comments`)
+      .then(res => this.comments = res.data)
+      .catch(err => console.log(err));
     },
 
+    getPosts() {
+      axios.get(`${url}posts`)
+      .then(res => this.posts = res.data)
+      .catch(err => console.log(err));
+    },
+    
     sendComment(refPost){
       axios.post(`${url}comments`, {
         post: refPost,
         commentBody: this.newComment
       })
-      .then(this.newComment = '')
+      .then(this.newComment = '', this.getComments())
         .catch(err => console.log(err));
     },
 
@@ -83,7 +87,7 @@ export default {
 
     deleteComment(refComment){
       axios.delete(`${url}comments/${refComment}`)
-      .then(res => console.log(res))
+      .then(res => console.log(res), this.getComments())
       .catch(err => console.log(err));
     }
   },
@@ -91,6 +95,7 @@ export default {
     axios.get(`${url}comments`)
       .then(res => this.comments = res.data)
       .catch(err => console.log(err));
+    
   }
 }
 </script>
