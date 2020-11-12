@@ -136,7 +136,7 @@ button {
 
 #nav a {
   font-weight: bold;
-    text-decoration: none;
+  text-decoration: none;
   color: #2c3e50;
 }
 
