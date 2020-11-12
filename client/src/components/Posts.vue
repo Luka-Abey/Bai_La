@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <h1>not a social media site <img src="../../public/na.png"> </h1>
     <form @submit.prevent="sendPost" class="input-form">
       <div class="input-form">
         <input type ="text" v-model="newPost" placeholder="Write here!">
