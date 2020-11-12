@@ -57,6 +57,7 @@ export default {
       newComment: ``
     }
   },
+  
   methods: {
     getComments(){
       axios.get(`${url}comments`)
@@ -91,6 +92,7 @@ export default {
       .catch(err => console.log(err));
     }
   },
+
   created() {
     axios.get(`${url}comments`)
       .then(res => this.comments = res.data)
