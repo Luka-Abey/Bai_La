@@ -8,7 +8,7 @@
         <button type = "submit" name="button" class="btn-send"><img src='../../public/send.png'></button>
       </div>
     </form>
-    <div class = "post" v-bind:key="post.id" v-for="post in posts">
+    <div class = "post" v-bind:key="post._id" v-for="post in posts">
       <PostItem class = "post-text" v-html="post.postBody"/>
       <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
         <PostItem v-html="post.video" />
@@ -27,7 +27,7 @@
       </div>
       <form @submit.prevent="sendComment(post._id)">
         <div class="input-form">
-          <input type ="text" v-model="newComment" placeholder="Write comment here!">
+          <input v-bind:key="post._id" type ="text" v-model="newComment" placeholder="Write comment here!">
           <button type = "submit" class="btn-send"><img src='../../public/send.png'></button>
         </div>
       </form>
