@@ -13,7 +13,15 @@
 
     <h4>No data trading/harvesting.</h4>
       <li> Advertising - if we get that far - will be curated, not targeted.</li>
+    </ul>
 
+
+    <h3>Usage Policy:</h3>
+
+    <h4>Terms of use</h4>
+    <ul type="disc">
+      <li> We will never sell your data. We hardly even store any</li>
+      <li> Your details are stored safely and securely. Nonetheless, please do not use passwords you have used before.</li>
     </ul>
 
   </div>
