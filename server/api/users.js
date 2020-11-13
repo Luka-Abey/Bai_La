@@ -9,14 +9,25 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const newUser = new User({
-    username: req.body.username,
-    email: req.body.email,
-    password: bcrypt.hash(req.body.password, 10)
-  });
-  newUser.save().then(post => res.json(post));
+  bcrypt.hash(req.body.password, 10, (err, hash) => {
+    if (err) {
+      return res.status(500).json({
+        error: err
+      });
+    } else {
+      const newUser = new User({
+        username: req.body.username,
+        email: req.body.email,
+        password: hash
+      });
+      newUser.save()
+        .then(result => {
+          res.status(201).json({success: true});
+        })
+        .catch(err => res.status(500).json({ success: false}));
+    }
+  })
 });
-
 
 router.delete('/:id', (req, res) => {
   User.findById(req.params.id)
@@ -24,7 +35,7 @@ router.delete('/:id', (req, res) => {
       user.remove()
     .then(() => res.json({ success: true }))
     )
-    .catch(err => res.status(404).json({ success: false }));
+    .catch(err => res.status(500).json({ success: false }));
 })
 
 module.exports = router;
