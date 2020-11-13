@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
   const newUser = new User({
     username: req.body.username,
     email: req.body.email,
-    password: bcrypt.hash(req.body.password)
+    password: bcrypt.hash(req.body.password, 10)
   });
   newUser.save().then(post => res.json(post));
 });
