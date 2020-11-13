@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     .then(users => res.json(users))
 });
 
-router.post('/', (req, res) => {
+router.post('/signup', (req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
       return res.status(500).json({
@@ -28,6 +28,10 @@ router.post('/', (req, res) => {
     }
   })
 });
+
+router.post('/login', (req, res) => {
+
+})
 
 router.delete('/:id', (req, res) => {
   User.findById(req.params.id)
