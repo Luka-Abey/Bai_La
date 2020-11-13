@@ -21,6 +21,17 @@ router.post('/', (req, res) => {
   newComment.save().then(comment => res.json(comment));
 });
 
+
+// PUT
+// router.put('/:id', (req, res) => {
+//   const newComment = new Comment({
+//     user: req.body.user,
+//     commentBody: converter.makeHtml(req.body.commentBody),
+//     post: req.body.post
+//   });
+//   newComment.save().then(comment => res.json(comment));
+// });
+
 router.delete('/:id', (req, res) => {
   Comment.findById(req.params.id)
     .then(comment => 
