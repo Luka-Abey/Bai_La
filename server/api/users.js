@@ -16,6 +16,7 @@ router.post('/', (req, res) => {
   newUser.save().then(post => res.json(post));
 });
 
+
 router.delete('/:id', (req, res) => {
   User.findById(req.params.id)
     .then(user => 
