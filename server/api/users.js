@@ -31,7 +31,16 @@ router.post('/signup', (req, res) => {
 
 router.post('/login', (req, res) => {
   User.find({ email: req.body.email })
-    
+    .exec()
+    .then(user => {
+      if(user.length < 1){
+        return res.status(401).json({
+          message: 'not authorised'
+        });
+      }
+      bcrypt.compare(req.body.password, user[0].password, (err, res) => {
+      })
+    })
 })
 
 router.delete('/:id', (req, res) => {
