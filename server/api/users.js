@@ -30,7 +30,8 @@ router.post('/signup', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-
+  User.find({ email: req.body.email })
+    
 })
 
 router.delete('/:id', (req, res) => {
