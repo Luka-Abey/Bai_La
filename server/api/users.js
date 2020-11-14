@@ -38,22 +38,20 @@ router.post('/login', (req, res) => {
           message: 'not authorised'
         });
       }
-      bcrypt.compare(req.body.password, user[0].password, (err, res) => {
+      bcrypt.compare(req.body.password, user[0].password, (err, result) => {
         if (err) {
           return res.status(401).json({
             message: 'not authorised'
           });
         }
-        if (res) {
+        if (result) {
           return res.status(200).json({
             message: 'authorised'
           })
         }
-        else {
-          return res.status(401).json({
-            message: 'not authorised'
-          })
-        }
+        res.status(401).json({
+        message: 'not authorised'
+        })
       })
     })
 })
