@@ -49,6 +49,11 @@ router.post('/login', (req, res) => {
             message: 'authorised'
           })
         }
+        else {
+          return res.status(401).json({
+            message: 'not authorised'
+          })
+        }
       })
     })
 })
