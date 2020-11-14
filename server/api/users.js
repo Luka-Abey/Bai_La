@@ -9,6 +9,11 @@ router.get('/', (req, res) => {
     .then(users => res.json(users))
 });
 
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(users => res.json(users))
+});
+
 router.post('/signup', (req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
@@ -36,7 +41,7 @@ router.post('/login', (req, res) => {
     .then(user => {
       if(user.length < 1){
         return res.status(401).json({
-          message: 'not existent authorised'
+          message: 'not authorised'
         });
       }
       bcrypt.compare(req.body.password, user[0].password, (err, result) => {
@@ -55,7 +60,7 @@ router.post('/login', (req, res) => {
           return res.status(200).json({
             message: 'authorised',
             token: token
-          })
+          });
         }
         res.status(401).json({
         message: 'not authorised'
