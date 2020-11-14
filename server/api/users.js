@@ -36,7 +36,7 @@ router.post('/login', (req, res) => {
     .then(user => {
       if(user.length < 1){
         return res.status(401).json({
-          message: 'not authorised'
+          message: 'not existent authorised'
         });
       }
       bcrypt.compare(req.body.password, user[0].password, (err, result) => {
@@ -46,6 +46,12 @@ router.post('/login', (req, res) => {
           });
         }
         if (result) {
+          const token = jwt.sign({
+            email: user[0].email,
+            user: user[0]._id
+          }, 
+          'secret', 
+          );
           return res.status(200).json({
             message: 'authorised'
           })
