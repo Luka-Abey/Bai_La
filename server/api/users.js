@@ -53,7 +53,8 @@ router.post('/login', (req, res) => {
           'secret', 
           );
           return res.status(200).json({
-            message: 'authorised'
+            message: 'authorised',
+            token: token
           })
         }
         res.status(401).json({
