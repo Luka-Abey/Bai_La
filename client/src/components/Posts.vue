@@ -38,7 +38,7 @@
 <script>
 import PostItem from './PostItem.vue';
 import Comments from './Comments.vue';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import axios from 'axios';
 const url = 'http://localhost:5000/api/';
 
