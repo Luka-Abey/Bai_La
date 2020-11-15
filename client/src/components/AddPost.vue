@@ -15,8 +15,19 @@ import { mapActions } from 'vuex';
 
 export default {
   name: "AddPost",
+  data() {
+    return {
+      newPost: '',
+      newVideo: ''
+    }
+  },
   methods: {
-    ...mapActions(['addPost'])
+    ...mapActions(['addPost']),
+
+    sendPost() {
+      console.log(this.newPost); 
+      this.addPost(this.newPost, this.newVideo)
+    }
   }
 }
 </script>

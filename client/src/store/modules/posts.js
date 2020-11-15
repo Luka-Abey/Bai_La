@@ -19,7 +19,8 @@ const actions = {
     commit('setPosts', response.data);
   },
   
-  async addPost({ commit }, post) {
+  async addPost({ commit }, data) {
+    console.log(data)
     const response = await axios.post(`${url}posts`, {
         postBody: this.newPost,
         video: this.newVideo
