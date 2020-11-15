@@ -25,8 +25,8 @@ export default {
     ...mapActions(['addPost']),
 
     sendPost() {
-      console.log(this.newPost); 
-      this.addPost(this.newPost, this.newVideo)
+      console.log(this.newPost + this.newVideo); 
+      this.addPost({postBody: this.newPost, video: this.newVideo});
     }
   }
 }

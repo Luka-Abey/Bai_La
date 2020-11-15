@@ -19,14 +19,11 @@ const actions = {
     commit('setPosts', response.data);
   },
   
-  async addPost({ commit }, data) {
-    console.log(data)
-    const response = await axios.post(`${url}posts`, {
-        postBody: this.newPost,
-        video: this.newVideo
-      })
-      .then(this.newPost = '')
-      .catch(err => console.log(err));
+  async addPost({ commit }, obj) {
+    const response = await axios.post(`${url}posts`, obj)
+      // .then(this.newPost = '')
+      // .catch(err => console.log(err)
+      // );
 
       commit('newPost', response.data);
   }
