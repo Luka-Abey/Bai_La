@@ -40,7 +40,7 @@ import PostItem from './PostItem.vue';
 import Comments from './Comments.vue';
 import { mapGetters, mapActions } from 'vuex';
 import axios from 'axios';
-const url = 'http://localhost:5000/api/';
+const url = process.env.API_URL;
 
 export default {
   name: "Posts",
@@ -80,6 +80,15 @@ export default {
         commentBody: this.newComment
       })
       .then(this.newComment = '', this.getComments())
+        .catch(err => console.log(err));
+    },
+
+    sendPost(){
+      axios.post(`${url}posts`, {
+        postBody: this.newPost,
+        video: this.newVideo
+      })
+      .then(this.newPost = '')
         .catch(err => console.log(err));
     },
 

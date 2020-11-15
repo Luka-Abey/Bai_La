@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const url = process.env.API_URL;
+
 const state = {
   posts: []
 };
@@ -15,11 +17,23 @@ const actions = {
     .catch(err => console.log(err)
     );
     commit('setPosts', response.data);
+  },
+  
+  async addPost({ commit }, post) {
+    const response = await axios.post(`${url}posts`, {
+        postBody: this.newPost,
+        video: this.newVideo
+      })
+      .then(this.newPost = '')
+      .catch(err => console.log(err));
+
+      commit('newPost', response.data);
   }
 };
 
 const mutations = {
-  setPosts: (state, posts) => (state.posts = posts)
+  setPosts: (state, posts) => (state.posts = posts),
+  newPost: (state, post) => (state.posts.unshift(post))
 };
 
 export default {

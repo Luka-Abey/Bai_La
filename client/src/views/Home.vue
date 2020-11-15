@@ -8,7 +8,7 @@
 import Posts from '@/components/Posts.vue'
 import axios from 'axios'
 
-const url = 'http://localhost:5000/api/'
+const url = process.env.API_URL
 
 export default {
   name: 'Home',
