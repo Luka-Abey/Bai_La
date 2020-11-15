@@ -60,6 +60,8 @@ export default {
   },
 
   methods: {
+    ...mapActions(['fetchPosts']),
+
     getComments(){
       axios.get(`${url}comments`)
       .then(res => this.comments = res.data)
@@ -96,10 +98,10 @@ export default {
   computed: mapGetters(['allPosts']),
 
   created() {
-    axios.get(`${url}comments`)
-      .then(res => this.comments = res.data)
-      .catch(err => console.log(err));
-    
+    // axios.get(`${url}comments`)
+    //   .then(res => this.comments = res.data)
+    //   .catch(err => console.log(err));
+    this.fetchPosts
   }
 }
 </script>

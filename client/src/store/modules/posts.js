@@ -10,13 +10,17 @@ const getters = {
 
 const actions = {
   async fetchPosts({ commit }) {
-    const respone = await axios.get(`${url}posts`)
+    const response = await axios.get(`${url}posts`)
     .then(res => this.posts = res.data)
-    .catch(err => console.log(err));
+    .catch(err => console.log(err)
+    );
+    commit('setPosts', response.data);
   }
 };
 
-const mutations = {};
+const mutations = {
+  setPosts: (state, posts) => (state.posts = posts)
+};
 
 export default {
   state,
