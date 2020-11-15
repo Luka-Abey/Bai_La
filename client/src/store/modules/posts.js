@@ -25,6 +25,7 @@ const actions = {
       .catch(err => console.log(err)
       );
       console.log(response.data)
+      console.log(state.posts)
       commit('newPost', response.data);
   }
 };

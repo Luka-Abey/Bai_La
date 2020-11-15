@@ -110,7 +110,7 @@ export default {
     // axios.get(`${url}comments`)
     //   .then(res => this.comments = res.data)
     //   .catch(err => console.log(err));
-    this.fetchPosts
+    this.fetchPosts();
   }
 }
 </script>
