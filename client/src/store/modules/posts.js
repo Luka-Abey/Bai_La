@@ -32,7 +32,7 @@ const actions = {
 
 const mutations = {
   setPosts: (state, posts) => (state.posts = posts),
-  newPost: (state, post) => (state.posts.push(post))
+  newPost: (state, post) => (state.posts.unshift(post))
 };
 
 export default {
