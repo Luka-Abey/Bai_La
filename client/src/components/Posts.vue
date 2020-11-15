@@ -38,6 +38,7 @@
 <script>
 import PostItem from './PostItem.vue';
 import Comments from './Comments.vue';
+import { mapGetters } from 'vuex';
 import axios from 'axios';
 const url = 'http://localhost:5000/api/';
 
@@ -57,7 +58,7 @@ export default {
       newComment: ``
     }
   },
-  
+
   methods: {
     getComments(){
       axios.get(`${url}comments`)
@@ -92,6 +93,7 @@ export default {
       .catch(err => console.log(err));
     }
   },
+  computed: mapGetters(['allPosts']),
 
   created() {
     axios.get(`${url}comments`)
