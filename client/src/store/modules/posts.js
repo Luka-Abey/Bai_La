@@ -25,14 +25,14 @@ const actions = {
       .catch(err => console.log(err)
       );
       console.log(response.data)
-      console.log(state.posts)
+      
       commit('newPost', response.data);
   }
 };
 
 const mutations = {
   setPosts: (state, posts) => (state.posts = posts),
-  newPost: (state, post) => (state.posts.unshift(post))
+  newPost: (state, post) => (state.posts.push(post))
 };
 
 export default {
