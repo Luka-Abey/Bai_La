@@ -1,23 +1,28 @@
 <template>
   <div class="home">
+    <AddPost />
     <Posts v-bind:posts="posts" />
   </div>
 </template>
 
 <script>
 import Posts from '@/components/Posts.vue'
+import AddPost from '@/components/AddPost.vue'
 import axios from 'axios'
 
-const url = process.env.API_URL
+const url = 'http://localhost:5000/api/';
 
 export default {
   name: 'Home',
   components: {
-    Posts
+    Posts,
+    AddPost
   },
   data() {
     return {
-      posts: []
+      posts: [],
+      newPost: '',
+      newVideo: ''
     }
   },
   created() {

@@ -1,12 +1,12 @@
 <template>
   <div class="page">
-    <form @submit.prevent="sendPost" class="input-form">
+    <!-- <form @submit.prevent="sendPost" class="input-form">
       <div class="input-form">
         <input type ="text" v-model="newPost" placeholder="Write here!">
         <input type="text" v-model="newVideo" placeholder="Video ID links here!">
         <button type = "submit" name="button" class="btn-send"><img src='../../public/send.png'></button>
       </div>
-    </form>
+    </form> -->
     <div class = "post" v-bind:key="post._id" v-for="post in posts">
       <PostItem class = "post-text" v-html="post.postBody"/>
       <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">

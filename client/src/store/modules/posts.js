@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = process.env.API_URL;
+const url = 'http://localhost:5000/api/';
 
 const state = {
   posts: []
