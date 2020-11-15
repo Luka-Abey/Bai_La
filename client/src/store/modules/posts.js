@@ -21,10 +21,10 @@ const actions = {
   
   async addPost({ commit }, obj) {
     const response = await axios.post(`${url}posts`, obj)
-      // .then(this.newPost = '')
-      // .catch(err => console.log(err)
-      // );
-
+      .then(this.newPost = '')
+      .catch(err => console.log(err)
+      );
+      console.log(response.data)
       commit('newPost', response.data);
   }
 };
