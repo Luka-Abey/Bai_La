@@ -38,7 +38,8 @@ const actions = {
 
 const mutations = {
   setPosts: (state, posts) => (state.posts = posts),
-  newPost: (state, post) => (state.posts.unshift(post))
+  newPost: (state, post) => (state.posts.unshift(post)),
+  removePost: (state, id) => (console.log(state), state.posts = state.posts.filter(post => post.id !== id))
 };
 
 export default {
