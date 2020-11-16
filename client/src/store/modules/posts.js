@@ -27,6 +27,12 @@ const actions = {
       console.log(response.data)
       
       commit('newPost', response.data);
+  },
+
+  async deletePost({ commit }, id){
+    await axios.delete(`${url}posts/${id}`);
+
+    commit('removePost', id);
   }
 };
 
