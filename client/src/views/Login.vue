@@ -1,5 +1,5 @@
 <template>
-  <div class="page input-form">
+  <div class="page input-form about">
     <form action="">
        Username:
        <input type ="text" v-model="username" placeholder="Username">
