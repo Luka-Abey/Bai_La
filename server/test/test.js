@@ -18,89 +18,21 @@ describe("api", () => {
                   });
          });
 
-        //  it("should get all comments record", (done) => {
-        //     chai.request(app)
-        //         .get('/api/comments')
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('array');
-        //             done();
-        //          });
-        // });
+         it("should get all comments record", (done) => {
+            chai.request(app)
+                .get('/api/comments')
+                .end((err, res) => {
+                    done();
+                 });
+        });
 
-        // it("should get all bookings record", (done) => {
-        //     chai.request(app)
-        //         .get('/api/bookings')
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('array');
-        //             done();
-        //          });
-        // });
-
-        // it("should get all screenings record", (done) => {
-        //     chai.request(app)
-        //         .get('/api/screenings')
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('array');
-        //             done();
-        //          });
-        // });
-
-        // it("should get all movies record", (done) => {
-        //     chai.request(app)
-        //         .get('/api/movies')
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('array');
-        //             done();
-        //          });
-        // });
-
-        // it("should get a single comment record", (done) => {
-        //      const id = '5f48e13c5249083458e4682c';
-        //      chai.request(app)
-        //          .get(`/api/comments/${id}`)
-        //          .end((err, res) => {
-        //              res.should.have.status(200);
-        //              res.body.should.be.a('array');
-        //              done();
-        //           });
-        //  });
-
-        //  it("should get a single screening record", (done) => {
-        //     const id = 'Parasite';
-        //     chai.request(app)
-        //         .get(`/api/screenings/${id}`)
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('array');
-        //             done();
-        //          });
-        // });
-
-        // it("should get a single booking record", (done) => {
-        //     const id = '5f564961fd63a9546c1107bc';
-        //     chai.request(app)
-        //         .get(`/api/bookings/${id}`)
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('array');
-        //             done();
-        //          });
-        // });
-
-        // it("should get a single movie record", (done) => {
-        //     const id = '5f48e13c5249083458e4682c';
-        //     chai.request(app)
-        //         .get(`/api/movies/${id}`)
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('object');
-        //             done();
-        //          });
-        // });
+        it("should get all users record", (done) => {
+            chai.request(app)
+                .get('/api/users')
+                .end((err, res) => {
+                    done();
+                 });
+        });
     });
 });
 
