@@ -8,7 +8,7 @@
       <button v-on:click="deletePost(post._id)" class="btn-warning"><img src='../../public/bin.png'></button>
       <hr>    
       
-      <!-- <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
+      <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
         <div v-if="post._id == comment.post">
         <Comments class ="comment-text" v-html="comment.commentBody" />
           <div>
@@ -22,7 +22,7 @@
           <input v-bind:key="post._id" type ="text" v-model="newComment" placeholder="Write comment here!">
           <button type = "submit" class="btn-send"><img src='../../public/send.png'></button>
         </div>
-      </form> -->
+      </form>
       <hr class="thick-line">
     </div>
   </div>

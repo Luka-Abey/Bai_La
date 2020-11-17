@@ -1,24 +1,13 @@
 <template>
   <div id="app">
-    <div class="container">
-      <AddTodo/>
-      <Todos/>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+      <h1>not a social media site <img src="../public/na.png"> </h1>
     </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import Todos from "./components/Todos.vue";
-import AddTodo from "./components/AddTodo.vue";
-
-export default {
-  name: "app",
-  components: {
-    Todos,
-    AddTodo
-  }
-};
-</script>
 
 <style>
 #app {
