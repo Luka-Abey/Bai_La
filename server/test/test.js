@@ -3,6 +3,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = 'http://localhost:5000';
 const { describe, it } = require('mocha');
+const should = require('chai').should();
 
 // Configure chai
 chai.use(chaiHttp);
@@ -63,8 +64,8 @@ describe("api", () => {
                 postBody: "to be deleted"
             }
           chai.request(app)
-              .post('/api/movies')
-              .send(movie)
+              .post('/api/post')
+              .send(post)
               .end((err, res) => {
                     // res.should.have.status(200);
                     // res.body.should.be.a('object');    
@@ -73,8 +74,6 @@ describe("api", () => {
         });
     });
 });
-
-
 
 
 // describe("api", () => {
@@ -98,29 +97,26 @@ describe("api", () => {
 //         });
 //     });
 
-    describe("DELETE /", () => {
+describe("DELETE /", () => {
 
-      it('it should DELETE a comment given the id', (done) => {
-            chai.request(app)
-                  .delete('/api/comments/testID')
-                  .end((err, res) => {
-                        // res.should.have.status(200);
-                    done();
-                  });
+  it('it should DELETE a comment given the id', (done) => {
+        chai.request(app)
+              .delete('/api/comments/testID')
+              .end((err, res) => {
+                    // res.should.have.status(200);
+                done();
+              });
 
-        });
-
-
-        // it('it should DELETE a comment given the id', (done) => {
-        //     chai.request(app)
-        //           .delete('/api/comments/5f57ae9831960a586c6cc9c5')
-        //           .end((err, res) => {
-        //                 res.should.have.status(200);
-        //             done();
-        //           });
-
-        // });
     });
 
 
-// });
+    it('it should DELETE a post given the id', (done) => {
+        chai.request(app)
+              .delete('/api/posts/testID')
+              .end((err, res) => {
+                    // res.should.have.status(200);
+                done();
+              });
+
+    });
+});
