@@ -19,7 +19,7 @@
         <hr>
         </div>
       </div>
-      <form @submit.prevent="sendComment(post._id)">
+      <form :key="post._id" @submit.prevent="sendComment(post._id)">
         <div class="input-form">
           <input v-bind:key="post._id" type ="text" v-model="newComment" placeholder="Write comment here!">
           <button type = "submit" class="btn-send"><img src='../../public/send.png'></button>
@@ -46,7 +46,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "updatePost"]),
+    ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
     
     sendComment(postRef) {
       this.addComment({commentBody: this.newComment, post: postRef});

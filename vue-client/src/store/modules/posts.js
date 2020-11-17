@@ -49,6 +49,12 @@ const actions = {
 
     commit('removePost', id);
   },
+
+  async deleteComment({ commit }, id) {
+    await axios.delete(`${url}comments/${id}`);
+
+    commit('removeComment', id);
+  },
   // async filterPosts({ commit }, e) {
   //   // Get selected number
   //   const limit = parseInt(
@@ -75,9 +81,11 @@ const mutations = {
   setPosts: (state, posts) => (state.posts = posts),
   setComments: (state, comments) => (state.comments = comments),
   newPost: (state, post) => state.posts.unshift(post),
-  newComment: (state, comment) => state.comments.unshift(comment),
+  newComment: (state, comment) => state.comments.push(comment),
   removePost: (state, id) =>
     (state.posts = state.posts.filter(post => post._id !== id)),
+  removeComment: (state, id) =>
+    (state.comments = state.comments.filter(comment => comment._id !== id)),  
   updatePost: (state, updatePost) => {
     const index = state.posts.findIndex(post => post.id === updatePost.id);
     if (index !== -1) {
