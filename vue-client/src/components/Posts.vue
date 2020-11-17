@@ -41,6 +41,7 @@ export default {
   name: "Posts",
   methods: {
     ...mapActions(["fetchPosts", "deletePost", "updatePost"]),
+    
     editPost(post) {
       const updatePost = {
         id: post._id,
