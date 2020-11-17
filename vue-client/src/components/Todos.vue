@@ -7,6 +7,7 @@
         <div v-html="post.video" />
       </span>
       <button @click="deletePost(post._id)" class="btn-warning"><img src='../../public/bin.png'></button>
+      <button @click="editPost(post._id)" class="btn-edit">edit</button>
       <hr>    
       
       <!-- <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
@@ -37,17 +38,17 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  name: "Todos",
+  name: "Posts",
   methods: {
     ...mapActions(["fetchPosts", "deletePost", "updatePost"]),
-    onDblClick(todo) {
-      const updTodo = {
-        id: todo.id,
-        title: todo.title,
-        completed: !todo.completed
+    editPost(post) {
+      const updatePost = {
+        id: post._id,
+        postBody: post.newPost,
+        video: post.newVideo
       };
 
-      this.updateTodo(updTodo);
+      this.updatePost(updatePost);
     }
   },
   computed: mapGetters(["allPosts"]),
