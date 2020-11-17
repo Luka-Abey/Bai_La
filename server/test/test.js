@@ -71,43 +71,6 @@ describe("api", () => {
                 done();
               });
         });
-
-//         it('it should POST a screening ', (done) => {
-//             let screening = {
-//                 seats: ["mixed", 0],
-//                 name: "blah",
-//                 theaterId : "blah",
-//             }
-//           chai.request(app)
-//               .post('/api/screenings')
-//               .send(screening)
-//               .end((err, res) => {
-//                     res.should.have.status(200);
-//                     res.body.should.be.a('object');    
-//                 done();
-//               });
-//         });
-
-//         it('it should POST a booking ', (done) => {
-//             let booking = {
-//                 seats: ["mixed", 0],
-//                 name: "blah",
-//                 filmTitle : "blah",
-//             }
-//           chai.request(app)
-//               .post('/api/bookings')
-//               .send(booking)
-//               .end((err, res) => {
-//                     res.should.have.status(200);
-//                     res.body.should.be.a('object');    
-//                 done();
-//               });
-//         });
-
-
-
-
-
     });
 });
 

@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
+    "coverage": "nyc npm test",
     "start": "node server/server.js",
     "server": "nodemon server/server.js",
     "client": "npm run serve --prefix client",
