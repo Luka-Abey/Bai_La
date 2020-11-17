@@ -39,6 +39,7 @@
     "vue-autofocus-directive": "^1.0.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "should": "^13.2.3"
   }
 }

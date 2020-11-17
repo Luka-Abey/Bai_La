@@ -50,3 +50,6 @@ And many more, look into [markdown](https://www.markdownguide.org/cheat-sheet) o
 
 ### Contributions:
 This project is open-source and community led. Feel free to open any issues, and send PRs. Check the [projects](https://github.com/Luka-Abey/socialLife/projects/1) tab for the current todos.
+
+### Testing:
+Unit tests located in server/tests. Currently at 100% coverage.
