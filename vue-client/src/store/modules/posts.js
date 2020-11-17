@@ -2,11 +2,13 @@ import axios from 'axios';
 const url = 'http://localhost:5000/api/';
 
 const state = {
-  posts: []
+  posts: [],
+  comments: []
 };
 
 const getters = {
-  allPosts: state => state.posts
+  allPosts: state => state.posts,
+  allComments: state => state.comments
 };
 
 const actions = {
@@ -17,6 +19,15 @@ const actions = {
 
     commit('setPosts', response.data);
   },
+
+  async fetchComments({ commit }) {
+    const response = await axios.get(
+      `${url}comments`
+    );
+
+    commit('setComments', response.data);
+  },
+
   async addPost({ commit }, post) {
     const response = await axios.post(
       `${url}posts`, post
@@ -24,6 +35,15 @@ const actions = {
 
     commit('newPost', response.data);
   },
+
+  async addComment({ commit }, comment) {
+    const response = await axios.post(
+      `${url}comments`, comment
+    );
+
+    commit('newComment', response.data);
+  },
+
   async deletePost({ commit }, id) {
     await axios.delete(`${url}posts/${id}`);
 
@@ -53,7 +73,9 @@ const actions = {
 
 const mutations = {
   setPosts: (state, posts) => (state.posts = posts),
+  setComments: (state, comments) => (state.comments = comments),
   newPost: (state, post) => state.posts.unshift(post),
+  newComment: (state, comment) => state.comments.unshift(comment),
   removePost: (state, id) =>
     (state.posts = state.posts.filter(post => post._id !== id)),
   updatePost: (state, updatePost) => {
