@@ -1,23 +1,25 @@
 <template>
+  <div>
   <div class="page">
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
-      <PostItem class = "post-text" v-html="post.postBody"/>
+      <div class = "post-text" v-html="post.postBody"/>
       <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
-        <PostItem v-html="post.video" />
+        <div v-html="post.video" />
       </span>
-      <button v-on:click="deletePost(post._id)" class="btn-warning"><img src='../../public/bin.png'></button>
+      <button @click="deletePost(post._id)" class="btn-warning"><img src='../../public/bin.png'></button>
+      <button @click="editPost(post._id)" class="btn-edit">edit</button>
       <hr>    
       
-      <div class = "comment" v-bind:key="comment.id" v-for="comment in comments">
+      <div class = "comment" v-bind:key="comment._id" v-for="comment in allComments">
         <div v-if="post._id == comment.post">
-        <Comments class ="comment-text" v-html="comment.commentBody" />
+        <div class ="comment-text" v-html="comment.commentBody" />
           <div>
             <button v-on:click="deleteComment(comment._id)" class="btn-warning"><img src='../../public/bin.png'></button>
           </div>
         <hr>
         </div>
       </div>
-      <form @submit.prevent="sendComment(post._id)">
+      <form :key="post._id" @submit.prevent="sendComment(post._id)">
         <div class="input-form">
           <input v-bind:key="post._id" type ="text" v-model="newComment" placeholder="Write comment here!">
           <button type = "submit" class="btn-send"><img src='../../public/send.png'></button>
@@ -26,28 +28,46 @@
       <hr class="thick-line">
     </div>
   </div>
+  
+  </div>
+
+  
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Posts",
-
-  // data(){
-  //   return {
-  //     comments: [],
-  //     newComment: ``
-  //   }
-  // },
+  data() {
+    return {
+      newComment: ''
+    }
+  },
 
   methods: {
-    ...mapActions(["fetchPosts", "deletePost"]),
-  },
-  computed: mapGetters(['allPosts']),
+    ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
+    
+    sendComment(postRef) {
+      this.addComment({commentBody: this.newComment, post: postRef});
+      this.newComment = ''
+    },
+    
+    editPost(post) {
+      const updatePost = {
+        id: post._id,
+        postBody: post.newPost,
+        video: post.newVideo
+      };
 
+      this.updatePost(updatePost);
+    }
+  },
+  computed: mapGetters(["allPosts", "allComments"]),
   created() {
     this.fetchPosts();
+    this.fetchComments();
   }
-}
+};
 </script>
+

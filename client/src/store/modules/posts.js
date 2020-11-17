@@ -1,45 +1,97 @@
 import axios from 'axios';
-
 const url = 'http://localhost:5000/api/';
 
 const state = {
-  posts: []
+  posts: [],
+  comments: []
 };
 
 const getters = {
-  allPosts: (state) => state.posts
+  allPosts: state => state.posts,
+  allComments: state => state.comments
 };
 
 const actions = {
   async fetchPosts({ commit }) {
-    const response = await axios.get(`${url}posts`)
-    .then(res => this.posts = res.data)
-    .catch(err => console.log(err)
+    const response = await axios.get(
+      `${url}posts`
     );
+
     commit('setPosts', response.data);
   },
-  
-  async addPost({ commit }, obj) {
-    const response = await axios.post(`${url}posts`, obj)
-      .then(this.newPost = '')
-      .catch(err => console.log(err)
-      );
-      console.log(response.data)
-      
-      commit('newPost', response.data);
+
+  async fetchComments({ commit }) {
+    const response = await axios.get(
+      `${url}comments`
+    );
+
+    commit('setComments', response.data);
   },
 
-  async deletePost({ commit }, id){
+  async addPost({ commit }, post) {
+    const response = await axios.post(
+      `${url}posts`, post
+    );
+
+    commit('newPost', response.data);
+  },
+
+  async addComment({ commit }, comment) {
+    const response = await axios.post(
+      `${url}comments`, comment
+    );
+
+    commit('newComment', response.data);
+  },
+
+  async deletePost({ commit }, id) {
     await axios.delete(`${url}posts/${id}`);
 
     commit('removePost', id);
+  },
+
+  async deleteComment({ commit }, id) {
+    await axios.delete(`${url}comments/${id}`);
+
+    commit('removeComment', id);
+  },
+  // async filterPosts({ commit }, e) {
+  //   // Get selected number
+  //   const limit = parseInt(
+  //     e.target.options[e.target.options.selectedIndex].innerText
+  //   );
+
+  //   const response = await axios.get(
+  //     `${url}posts?_limit=${limit}`
+  //   );
+
+  //   commit('setPosts', response.data);
+  // },
+  async updatePost({ commit }, updatePost) {
+    const response = await axios.put(
+      `${url}posts/${updatePost.id}`,
+      updatePost
+    );
+
+    commit('updatePost', response.data);
   }
 };
 
 const mutations = {
   setPosts: (state, posts) => (state.posts = posts),
-  newPost: (state, post) => (state.posts.unshift(post)),
-  removePost: (state, id) => (console.log(state), state.posts = state.posts.filter(post => post.id !== id))
+  setComments: (state, comments) => (state.comments = comments),
+  newPost: (state, post) => state.posts.unshift(post),
+  newComment: (state, comment) => state.comments.push(comment),
+  removePost: (state, id) =>
+    (state.posts = state.posts.filter(post => post._id !== id)),
+  removeComment: (state, id) =>
+    (state.comments = state.comments.filter(comment => comment._id !== id)),  
+  updatePost: (state, updatePost) => {
+    const index = state.posts.findIndex(post => post.id === updatePost.id);
+    if (index !== -1) {
+      state.posts.splice(index, 1, updatePost);
+    }
+  }
 };
 
 export default {
@@ -47,4 +99,4 @@ export default {
   getters,
   actions,
   mutations
-}
+};
