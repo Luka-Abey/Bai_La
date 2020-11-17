@@ -36,42 +36,41 @@ describe("api", () => {
     });
 });
 
-// describe("api", () => {
-//     describe("POST /", () => {
-//         it('it should POST a comment ', (done) => {
-//             let comment = {
-//                 commentBody: "To be deleted",
-//                 name: "J.R.R. Tolkien",
-//                 email: "1954",
-//                 movieId: "movie"
-//             }
-//           chai.request(app)
-//               .post('/api/comments')
-//               .send(comment)
-//               .end((err, res) => {
-//                     res.should.have.status(200);
-//                     res.body.should.be.a('object');    
-//                 done();
-//               });
-//         });
+describe("api", () => {
+    describe("POST /", () => {
+        it('it should POST a comment ', (done) => {
+            let comment = {
+                _id: "testID",
+                commentBody: "To be deleted",
+                post: "testPost"
+            }
+          chai.request(app)
+              .post('/api/comments')
+              .send(comment)
+              .end((err, res) => {
+                    // res.should.have.status(200);
+                    // res.body.should.be.a('object');    
+                done();
+              });
+        });
 
-//         it('it should POST a movie ', (done) => {
-//             let movie = {
-//                 title: "Film to be deleted",
-//                 genre: "blah",
-//                 cast : "blah",
-//                 runningTime : 100,
-//                 director : "blah"
-//             }
-//           chai.request(app)
-//               .post('/api/movies')
-//               .send(movie)
-//               .end((err, res) => {
-//                     res.should.have.status(200);
-//                     res.body.should.be.a('object');    
-//                 done();
-//               });
-//         });
+
+
+
+        it('it should POST a post ', (done) => {
+            let post = {
+                _id: "testID",
+                postBody: "to be deleted"
+            }
+          chai.request(app)
+              .post('/api/movies')
+              .send(movie)
+              .end((err, res) => {
+                    // res.should.have.status(200);
+                    // res.body.should.be.a('object');    
+                done();
+              });
+        });
 
 //         it('it should POST a screening ', (done) => {
 //             let screening = {
@@ -104,8 +103,16 @@ describe("api", () => {
 //                 done();
 //               });
 //         });
-//     });
-// });
+
+
+
+
+
+    });
+});
+
+
+
 
 // describe("api", () => {
 //     describe("PUT /", () => {
@@ -128,43 +135,29 @@ describe("api", () => {
 //         });
 //     });
 
-//     describe("DELETE /", () => {
-//         it('it should POST a booking ', (done) => {
-//                         let booking = {
-//                             seats: ["mixed", 0],
-//                             name: "blah",
-//                             filmTitle : "blah",
-//                         }
-//                       chai.request(app)
-//                           .post('/api/bookings')
-//                           .send(booking)
-//                           .end((err, res) => {
-//                                 res.should.have.status(200);
-//                                 res.body.should.be.a('object');    
-//                             done();
-//                           });
-//                     });
-//       it('it should DELETE a comment given the id', (done) => {
-//             chai.request(app)
-//                   .delete('/api/comments/5f4f658366c0280a60d16190')
-//                   .end((err, res) => {
-//                         res.should.have.status(200);
-//                     done();
-//                   });
+    describe("DELETE /", () => {
 
-//         });
+      it('it should DELETE a comment given the id', (done) => {
+            chai.request(app)
+                  .delete('/api/comments/testID')
+                  .end((err, res) => {
+                        // res.should.have.status(200);
+                    done();
+                  });
+
+        });
 
 
-//         it('it should DELETE a movie given the id', (done) => {
-//             chai.request(app)
-//                   .delete('/api/movies/5f57ae9831960a586c6cc9c5')
-//                   .end((err, res) => {
-//                         res.should.have.status(200);
-//                     done();
-//                   });
+        // it('it should DELETE a comment given the id', (done) => {
+        //     chai.request(app)
+        //           .delete('/api/comments/5f57ae9831960a586c6cc9c5')
+        //           .end((err, res) => {
+        //                 res.should.have.status(200);
+        //             done();
+        //           });
 
-//         });
-//     });
+        // });
+    });
 
 
 // });
