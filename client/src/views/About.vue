@@ -1,5 +1,7 @@
 <template>
   <div class="about">
+
+    A social network for creatives.
     
     <h3>Key changes to standard social media model:</h3>
 
