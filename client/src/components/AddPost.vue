@@ -1,7 +1,7 @@
 <template>
   <div class="page">
-    <form @submit.prevent="sendPost" class="input-form">
-      <div class="input-form">
+    <form @submit.prevent="sendPost">
+      <div class="post-input-form">
         <input type ="text" v-model="newPost" placeholder="Write here!">
         <input type="text" v-model="newVideo" placeholder="Video ID links here!">
         <button type = "submit" name="button" class="btn-send"><img src='../../public/send.png'></button>

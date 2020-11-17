@@ -10,11 +10,14 @@
       <li> Select how many posts you want to scroll for.</li>
       <br>
       <li> Max 50 posts, you can define the number of posts you view whenever you log in.</li>
-
+    </ul>
     <h4>No like buttons.</h4>
+    <ul>
       <li> No arbitrary social confirmation methods. Only comments.</li>
+    </ul>
 
     <h4>No data trading/harvesting.</h4>
+    <ul> 
       <li> Advertising - if we get that far - will be curated, not targeted.</li>
     </ul>
 

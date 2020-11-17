@@ -2,12 +2,14 @@
   <div>
   <div class="page">
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
-      <div class = "post-text" v-html="post.postBody"/>
-      <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
-        <div v-html="post.video" />
-      </span>
-      <button @click="deletePost(post._id)" class="btn-warning"><img src='../../public/bin.png'></button>
-      <button @click="editPost(post._id)" class="btn-edit">edit</button>
+      <div class = "post-text-buttons">
+        <div class = "post-text" v-html="post.postBody"/>
+        <button @click="deletePost(post._id)" class="btn-warning"><img src='../../public/bin.png'></button>
+        <button @click="editPost(post._id)" class="btn-edit">edit</button>
+      </div>
+        <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
+          <div v-html="post.video" />
+        </span>
       <hr>    
       
       <div class = "comment" v-bind:key="comment._id" v-for="comment in allComments">

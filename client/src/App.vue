@@ -107,7 +107,6 @@ input {
 button {
   color: rgb(255, 226, 189);
   background-color: #2c3e50;
-  opacity: 0.9;
   display: inline;
   flex-direction: column;
   align-items: flex-end;
@@ -120,11 +119,13 @@ button {
 .btn-warning {
   width: 35px;
   height: 30px;
-  background-color: #502c2c;
+  /* background-color: #502c2c; */
 }
 
 .btn-edit {
-  background-color: #37502c;
+  width: 35px;
+  height: 30px;
+  /* background-color: #37502c; */
 }
 
 .btn-send {
@@ -147,8 +148,18 @@ button {
 }
 
 .about {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
+  font-size: 20px;
+}
+
+.input-form {
+  display: flex;
+  padding: 10px;
+}
+
+.post-text-buttons {
+  display: flex;
 }
 
 li {

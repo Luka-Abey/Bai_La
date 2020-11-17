@@ -35,7 +35,8 @@
     "mongoose": "^5.10.13",
     "mongoose-unique-validator": "^2.0.3",
     "nyc": "^15.1.0",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "vue-autofocus-directive": "^1.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
