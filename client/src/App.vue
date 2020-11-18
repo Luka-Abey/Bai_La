@@ -104,6 +104,9 @@ input {
     display: inline-block;
 }
 
+button {
+  background-color: none;
+}
 
 .btn {
   color: rgb(255, 226, 189);
