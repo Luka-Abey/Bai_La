@@ -1,5 +1,6 @@
 ### Not really a social media site
 
+An open-source social media site for creatives.
 
 ### Key changes to standard social media model:
 
@@ -48,4 +49,4 @@ MEVN stack, mongoose, axios, showdown, nodemon, atlas, kanban, github
 And many more, look into [markdown](https://www.markdownguide.org/cheat-sheet) or just use html elements :octocat:
 
 ### Contributions:
-This project aims to be open source and community led. Feel free to open any issues, and send PRs. Check the [projects](https://github.com/Luka-Abey/socialLife/projects/1) tab for the current todos.
+This project is open-source and community led. Feel free to open any issues, and send PRs. Check the [projects](https://github.com/Luka-Abey/socialLife/projects/1) tab for the current todos.

@@ -8,7 +8,7 @@ converter = new showdown.Converter();
 
 router.get('/', (req, res) => {
   Comment.find()
-    .sort({ date: -1 })
+    .sort({ date: 1 })
     .then(comments => res.json(comments))
 });
 

@@ -1,13 +1,6 @@
 <template>
   <div class="page">
-    <form @submit.prevent="sendPost" class="input-form">
-      <div class="input-form">
-        <input type ="text" v-model="newPost" placeholder="Write here!">
-        <input type="text" v-model="newVideo" placeholder="Video ID links here!">
-        <button type = "submit" name="button" class="btn-send"><img src='../../public/send.png'></button>
-      </div>
-    </form>
-    <div class = "post" v-bind:key="post._id" v-for="post in posts">
+    <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
       <PostItem class = "post-text" v-html="post.postBody"/>
       <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
         <PostItem v-html="post.video" />
@@ -36,68 +29,25 @@
 </template>
 
 <script>
-import PostItem from './PostItem.vue';
-import Comments from './Comments.vue';
-import axios from 'axios';
-const url = 'http://localhost:5000/api/';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: "Posts",
-  components: {
-    PostItem,
-    Comments
-    },
-  props: ["posts"],
 
-  data(){
-    return {
-      comments: [],
-      newPost: '',
-      newVideo: '',
-      newComment: ``
-    }
-  },
-  
+  // data(){
+  //   return {
+  //     comments: [],
+  //     newComment: ``
+  //   }
+  // },
+
   methods: {
-    getComments(){
-      axios.get(`${url}comments`)
-      .then(res => this.comments = res.data)
-      .catch(err => console.log(err));
-    },
-
-    getPosts() {
-      axios.get(`${url}posts`)
-      .then(res => this.posts = res.data)
-      .catch(err => console.log(err));
-    },
-    
-    sendComment(refPost){
-      axios.post(`${url}comments`, {
-        post: refPost,
-        commentBody: this.newComment
-      })
-      .then(this.newComment = '', this.getComments())
-        .catch(err => console.log(err));
-    },
-
-    deletePost(refPost){
-      axios.delete(`${url}posts/${refPost}`)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-    },
-
-    deleteComment(refComment){
-      axios.delete(`${url}comments/${refComment}`)
-      .then(res => console.log(res), this.getComments())
-      .catch(err => console.log(err));
-    }
+    ...mapActions(["fetchPosts", "deletePost"]),
   },
+  computed: mapGetters(['allPosts']),
 
   created() {
-    axios.get(`${url}comments`)
-      .then(res => this.comments = res.data)
-      .catch(err => console.log(err));
-    
+    this.fetchPosts();
   }
 }
 </script>
