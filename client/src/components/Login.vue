@@ -6,6 +6,7 @@
         Password:
         <input type="password" v-model="password" placeholder="Password">
       <button>Submit</button>
+      <button>Forgot your password?</button>
     </form>
   </div>
 </template>

@@ -2,8 +2,8 @@
     <label :for="id + '_button'" :class="{'active': isActive}" class="toggle__button">
       <input type="checkbox" :disabled="disabled" :id="id + '_button'" v-model="checkedValue">
         <h3>Login <span class="toggle__switch"></span> Sign up</h3>
-        <span v-if="isActive" class="toggle__label"><h3>Signup</h3><Signup /></span>
-        <span v-if="! isActive" class="toggle__label"><h3>Login</h3><Login/></span>
+        <span v-if="isActive" class="toggle__label"><Signup /></span>
+        <span v-if="! isActive" class="toggle__label"><Login/></span>
     </label>
 </template>
 
@@ -76,6 +76,7 @@ export default {
 </script>
 
 <style scoped>
+
 .toggle__button {
     vertical-align: middle;
     user-select: none;
@@ -132,5 +133,9 @@ export default {
     left: 23px;
     background: #53B883;
     box-shadow: 0 0 1px #53B883;
+}
+
+.toggle__label {
+  transition: ease-in;
 }
 </style>

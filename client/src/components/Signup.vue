@@ -7,9 +7,8 @@
        <input type ="email" v-model="email" placeholder="Email">
         Password:
         <input type="password" v-model="password" placeholder="Password">
-      <button>Log in</button>
-      New here?
       <button>Sign up</button>
+      <button>Forgot your password?</button>
     </form>
   </div>
 </template>
