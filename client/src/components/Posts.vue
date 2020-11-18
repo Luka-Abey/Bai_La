@@ -55,6 +55,7 @@ export default {
       this.newComment = ''
     },
     
+
     editPost(post) {
       const updatePost = {
         id: post._id,

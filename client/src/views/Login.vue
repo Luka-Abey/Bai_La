@@ -1,25 +1,22 @@
 <template>
-  <div class="page input-form about">
-    <form action="">
-       Username:
-       <input v-autofocus type ="text" v-model="username" placeholder="Username">
-        Password:
-        <input type="password" v-model="password" placeholder="Password">
-      <button>Log in</button>
-      New here?
-      <button>Sign up</button>
-    </form>
+  <div>
+    <Login />
+    <Signup />
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import autofocus from 'vue-autofocus-directive';
-Vue.directive('autofocus', autofocus);
+
+import Login from "@/components/Login.vue";
+import Signup from "@/components/Signup.vue";
 
 export default {
-
-}
+  name: "app",
+  components: {
+    Login,
+    Signup
+  }
+};
 </script>
 
 <style>
