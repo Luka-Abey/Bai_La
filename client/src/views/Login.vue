@@ -1,6 +1,4 @@
 <template>
-
-
     <label :for="id + '_button'" :class="{'active': isActive}" class="toggle__button">
       <input type="checkbox" :disabled="disabled" :id="id + '_button'" v-model="checkedValue">
         <h3>Login <span class="toggle__switch"></span> Sign up</h3>
@@ -19,7 +17,6 @@ export default {
     Login,
     Signup
   },
-
 
     props: {
         disabled: {
