@@ -22,6 +22,7 @@
         </div>
       </div>
       <form :key="post._id" @submit.prevent="sendComment(post._id)">
+        <!-- test build -->
         <div class="input-form">
           <input v-bind:key="post._id" type ="text" v-model="newComment" placeholder="Write comment here!">
           <button type = "submit" class="btn-send"><img src='../../public/send.png'></button>
