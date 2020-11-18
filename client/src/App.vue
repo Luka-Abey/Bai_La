@@ -105,7 +105,9 @@ input {
 }
 
 button {
-  background-color: none;
+  padding: 0;
+border: none;
+background: none;
 }
 
 .btn {
