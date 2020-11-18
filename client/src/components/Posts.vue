@@ -4,6 +4,8 @@
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
       <div class = "post-text-buttons">
         <div class = "post-text" v-html="post.postBody"/>
+        <img src='../../public/menu.png'>
+        <img src='../../public/more.png'>
         <button @click="deletePost(post._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
         <button @click="editPost(post._id)" class="btn btn-edit">edit</button>
       </div>
