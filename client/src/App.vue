@@ -158,11 +158,13 @@ button {
   padding: 10px;
 }
 
-.post-text-buttons {
+.post-input-form {
   display: flex;
 }
 
 li {
   text-align: left;
 }
+
+
 </style>

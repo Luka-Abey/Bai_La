@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <form @submit.prevent="sendPost">
-      <div class="post-input-form">
-        <input type ="text" v-model="newPost" placeholder="Write here!">
-        <input type="text" v-model="newVideo" placeholder="Video ID links here!">
+      <div>
+        <input class="post-input-form" type ="text" v-model="newPost" placeholder="Write here!">
+        <input class="post-input-form" type="text" v-model="newVideo" placeholder="Video ID links here!">
         <button type = "submit" name="button" class="btn-send"><img src='../../public/send.png'></button>
       </div>
     </form>
