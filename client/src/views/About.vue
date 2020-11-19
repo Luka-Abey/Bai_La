@@ -39,9 +39,6 @@ Our platform supports html input fields, so feel free to make use of them.
     <a href="https://help.mixcloud.com/hc/en-us/articles/360004054499-How-do-I-embed-my-shows-on-other-platforms-">
     mixcloud
     </a>
-    <a href="https://help.mixcloud.com/hc/en-us/articles/360004054499-How-do-I-embed-my-shows-on-other-platforms-">
-    mixcloud
-    </a>    
 
 
     <h3>Usage Policy:</h3>
