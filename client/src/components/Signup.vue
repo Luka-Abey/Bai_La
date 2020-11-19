@@ -19,13 +19,16 @@ import autofocus from 'vue-autofocus-directive';
 Vue.directive('autofocus', autofocus);
 
 export default {
-  name: 'Login',
+  name: 'Signup',
 
   data(){
     return {
-      
-    }
-  }
+      username: '',
+      password: ''
+    };
+  },
+
+  
 
 }
 </script>

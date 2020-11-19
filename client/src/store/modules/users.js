@@ -43,7 +43,7 @@ const actions = {
 };
 
 const mutations = {
-  setPosts: (state, user) => (state.user = user),
+  // setPosts: (state, user) => (state.user = user),
   newUser: (state, user) => state.user = user,
   removePost: (state, id) =>
     (state.posts = state.posts.filter(post => post._id !== id)),
