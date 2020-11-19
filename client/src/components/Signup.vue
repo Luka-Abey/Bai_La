@@ -17,6 +17,7 @@
 import Vue from 'vue';
 import autofocus from 'vue-autofocus-directive';
 Vue.directive('autofocus', autofocus);
+import { mapActions } from 'vuex';
 
 export default {
   name: 'Signup',
@@ -29,16 +30,17 @@ export default {
   },
 
   methods: {
-    createUser() {
+    ...mapActions(["createUser"]),
+
+    signUp() {
       this.createUser({
         username: this.username,
         email: this.email,
         password: this.password
       });
-      this
+      this.username ='', this.email = '', this.password = ''
     }
   }
-
 }
 </script>
 

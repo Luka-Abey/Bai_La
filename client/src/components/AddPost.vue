@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     ...mapActions(["addPost"]),
-    sendPost(e) {
+    sendPost() {
       this.addPost({postBody: this.newPost, video: this.newVideo});
       this.newPost = '',
       this.newVideo = ''
