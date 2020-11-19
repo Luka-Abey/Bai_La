@@ -28,7 +28,16 @@ export default {
     };
   },
 
-  
+  methods: {
+    createUser() {
+      this.createUser({
+        username: this.username,
+        email: this.email,
+        password: this.password
+      });
+      this
+    }
+  }
 
 }
 </script>
