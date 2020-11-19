@@ -2,27 +2,27 @@ import axios from 'axios';
 const url = 'http://localhost:5000/api/';
 
 const state = {
+  user = []
 };
 
 const getters = {
 };
 
 const actions = {
-  async fetchPosts({ commit }) {
+  async getUser({ commit }, id) {
     const response = await axios.get(
-      `${url}posts`
+      `${url}users${id}`
     );
 
-    commit('setPosts', response.data);
+    commit('getUser', response.data);
   },
 
-
-  async addPost({ commit }, post) {
+  async createUser({ commit }, user) {
     const response = await axios.post(
-      `${url}posts`, post
+      `${url}users`, user
     );
 
-    commit('newPost', response.data);
+    commit('newUser', response.data);
   },
 
 
@@ -43,8 +43,8 @@ const actions = {
 };
 
 const mutations = {
-  setPosts: (state, posts) => (state.posts = posts),
-  newPost: (state, post) => state.posts.unshift(post),
+  setPosts: (state, user) => (state.user = user),
+  newUser: (state, user) => state.user = user,
   removePost: (state, id) =>
     (state.posts = state.posts.filter(post => post._id !== id)),
   updatePost: (state, updatePost) => {
