@@ -21,6 +21,28 @@
       <li> Advertising - if we get that far - will be curated, not targeted.</li>
     </ul>
 
+    <h3>Tricks:</h3>
+    
+    <ul> 
+      <li> 
+Our platform supports html input fields, so feel free to make use of them.
+    <br>
+    Will try make this more user friendly soon, by using the services' own APIs to convert inputted URLs into embed code behind the scenes.
+    <br>
+    For now, it is DIY :)
+
+
+
+      </li>
+    </ul>
+    <h4>Embedding:</h4>
+    <a href="https://help.mixcloud.com/hc/en-us/articles/360004054499-How-do-I-embed-my-shows-on-other-platforms-">
+    mixcloud
+    </a>
+    <a href="https://help.mixcloud.com/hc/en-us/articles/360004054499-How-do-I-embed-my-shows-on-other-platforms-">
+    mixcloud
+    </a>    
+
 
     <h3>Usage Policy:</h3>
 
