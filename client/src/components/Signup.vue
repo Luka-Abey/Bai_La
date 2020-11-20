@@ -1,6 +1,6 @@
 <template>
   <div class="page input-form about">
-    <form action="">
+    <form @submit.prevent="signUp">
        Username:
        <input v-autofocus type ="text" v-model="username" placeholder="Username">
        Email:
@@ -25,7 +25,8 @@ export default {
   data(){
     return {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     };
   },
 
