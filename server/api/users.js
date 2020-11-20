@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 // const checkAuth = require('../middleware/check-auth');
 
+
 router.get('/', (req, res) => {
   User.find()
     .then(users => res.json(users))
