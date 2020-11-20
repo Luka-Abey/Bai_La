@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken')
 // functions
 const findAndValidate = async (username, password) => {
   const user = await User.find({ username })
-  if (user) {
-    const isValid = await bcrypt.compare(password, user.password)
+  if (user.length > 0) {
+    const isValid = await bcrypt.compare(password, user[0].password)
     return isValid ? user : false
   } else {
     return false
@@ -48,8 +48,7 @@ router.post('/signup', (req, res) => {
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body
-  const user = await findAndValidate(username, password)
-  return user ? (res.status(200), user) : (res.status(401), false)
+  const user = (await findAndValidate(username, password)(user)) ? (res.status(200), user) : (res.status(401), false)
 })
 
 router.delete('/:id', (req, res) => {
