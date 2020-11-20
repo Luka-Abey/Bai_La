@@ -5,6 +5,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 // const checkAuth = require('../middleware/check-auth');
 
+// const handleError = (err) => {
+//   console.log(err.message)
+// }
+
 
 router.get('/', (req, res) => {
   User.find()
@@ -29,8 +33,8 @@ router.post('/signup', (req, res) => {
         password: hash
       });
       newUser.save()
-        .then(res => {
-          res.status(201).json({success: true});
+        .then(result => {
+          res.status(201).json({success: true, result});
         })
         .catch(err => res.status(500).json({ success: false, err: err}));
     }
