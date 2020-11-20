@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 // const checkAuth = require('../middleware/check-auth');
 // functions
+
 const findAndValidate = async (username, password) => {
   const user = await User.find({ username })
   if (user.length > 0) {
@@ -15,7 +16,6 @@ const findAndValidate = async (username, password) => {
   }
 }
 
-// routes
 router.get('/', (req, res) => {
   User.find().then(users => res.json(users))
 })
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-  bcrypt.hash(req.body.password, 10, (err, hash) => {
+  bcrypt.hash(req.body.password, 12, (err, hash) => {
     if (err) {
       return res.status(500).json({
         error: err
@@ -39,9 +39,9 @@ router.post('/signup', (req, res) => {
       newUser
         .save()
         .then(result => {
-          res.status(201).json({ success: true })
+          res.status(201).json({success: true, result});
         })
-        .catch(err => res.status(500).json({ success: false }))
+        .catch(err => res.status(500).json({ success: false, err: err}));
     }
   })
 })

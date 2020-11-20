@@ -1,10 +1,10 @@
 <template>
   <div class="page">
     <form @submit.prevent="sendPost">
-      <div class="post-input-form">
-        <input type ="text" v-model="newPost" placeholder="Write here!">
-        <input type="text" v-model="newVideo" placeholder="Video ID links here!">
-        <button type = "submit" name="button" class="btn-send"><img src='../../public/send.png'></button>
+      <div>
+        <input class="post-input-form" type ="text" v-model="newPost" placeholder="Write here!">
+        <input class="post-input-form" type="text" v-model="newVideo" placeholder="Video ID links here!">
+        <button type = "submit" name="button" class="btn btn-send"><img src='../../public/send.png'></button>
       </div>
     </form>
   </div>
@@ -22,8 +22,7 @@ export default {
   },
   methods: {
     ...mapActions(["addPost"]),
-    sendPost(e) {
-      e.preventDefault();
+    sendPost() {
       this.addPost({postBody: this.newPost, video: this.newVideo});
       this.newPost = '',
       this.newVideo = ''
