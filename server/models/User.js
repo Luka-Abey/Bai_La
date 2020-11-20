@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
+const { isEmail } = require('validator');
 
 const UserSchema = new Schema({
   username: {
@@ -20,7 +21,8 @@ const UserSchema = new Schema({
     required: [true, 'Email required. Please enter a valid email'],
     trim: true,
     unique: true,
-    uniqueCaseInsensitive: true
+    uniqueCaseInsensitive: true,
+    validate: [isEmail, 'Please enter a valid email']
   }
 });
 

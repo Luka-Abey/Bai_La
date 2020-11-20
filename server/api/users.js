@@ -19,9 +19,9 @@ router.get('/:id', (req, res) => {
 router.post('/signup', (req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
-      // return res.status(500).json({
-      //   error: err
-      // });
+      return res.status(500).json({
+        error: err
+      });
     } else {
       const newUser = new User({
         username: req.body.username,
