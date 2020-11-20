@@ -1,6 +1,7 @@
 <template>
   <div class="page input-form about">
     <form @submit.prevent="signUp">
+      <div>
        Username:
        <input v-autofocus type ="text" v-model="username" placeholder="Username">
        Email:
@@ -9,6 +10,7 @@
         <input type="password" v-model="password" placeholder="Password">
       <button>Sign up</button>
       <button>Forgot your password?</button>
+      </div>
     </form>
   </div>
 </template>

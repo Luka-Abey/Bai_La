@@ -11,7 +11,7 @@ const getters = {
 const actions = {
   async getUser({ commit }, id) {
     const response = await axios.get(
-      `${url}users${id}`
+      `${url}users/signup${id}`
     );
 
     commit('getUser', response.data);
@@ -19,7 +19,7 @@ const actions = {
 
   async createUser({ commit }, user) {
     const response = await axios.post(
-      `${url}users`, user
+      `${url}users/signup`, user
     );
 
     commit('newUser', response.data);
