@@ -56,9 +56,9 @@ router.post('/login', async (req, res) => {
   const user = (await findAndValidate(username, password)(user)) ? (res.status(200), user) : (res.status(401), false)
   if (user) {
     req.session.user_id = user._id // creates a user id in the session
-    res.redirect('/')
+//     res.redirect('/')
   } else {
-    res.redirect('/login')
+//     res.redirect('/login')
   }
 })
 
