@@ -7,6 +7,10 @@ const app = express()
 const cors = require('cors')
 const port = 5000
 const session = require('express-session')
+const url = 'http://localhost:8080'
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 app.use(session({ secret: 'notagoodsecret' }))
 
@@ -14,7 +18,13 @@ app.use(session({ secret: 'notagoodsecret' }))
 const db = require('./keys.js').mongoURI
 
 // Avoid CORS error
-app.use(cors({ origin: true }))
+app.use(
+  cors({
+    origin: [url],
+    credentials: true,
+    exposedHeaders: ['set-cookie']
+  })
+)
 
 // BodyParser
 app.use(express.json())
