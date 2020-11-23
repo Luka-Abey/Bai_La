@@ -12,6 +12,7 @@
 
 <script>
 import { mapActions } from "vuex";
+
 export default {
   name: "AddPost",
   data() {
