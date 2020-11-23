@@ -1,5 +1,7 @@
 <template>
-  <AddPost />
+  <div>
+    <AddPost />
+  </div>
 </template>
 
 template needs:

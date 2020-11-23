@@ -1,11 +1,13 @@
 <template>
   <div>
   <div class="page">
+    
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
       <div class = "post-text-buttons">
         <div class = "post-text" v-html="post.postBody"/>
         <button><img src='../../public/menu.png'></button>
         <button @click="deletePost(post._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
+        <editPost v-bind:post="post.postBody" />
         <button @click="editPost(post._id)" class="btn btn-edit">edit</button>
       </div>
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
@@ -40,9 +42,15 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import editPost from '@/components/EditPost.vue'
 
 export default {
   name: "Posts",
+
+  components: {
+    editPost
+  },
+
   data() {
     return {
       newComment: ''
