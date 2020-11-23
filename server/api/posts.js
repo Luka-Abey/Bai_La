@@ -20,6 +20,21 @@ router.post('/', (req, res) => {
   newPost.save().then(post => res.json(post));
 });
 
+router.put('/:id', (req, res) => {
+  var conditions = { _id : req.params.id };
+    Post.update(conditions, req.body).then(doc => {
+        if (!doc){
+            return res.status(404).end();
+        }
+        else{
+            return res.status(200).json(doc);
+        }
+    }).catch(err => next(err));
+  // Post.findById(req.params.id)
+  //   .then(post =>
+  //     post.update)
+})
+
 router.delete('/:id', (req, res) => {
   Post.findById(req.params.id)
     .then(post => 

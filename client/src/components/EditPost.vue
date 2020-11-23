@@ -21,8 +21,8 @@ export default {
 
   data() {
     return {
-      updatedPost: this.post.postBody,
-      updatedVideo: this.post.video
+      updatedPost: "edit text needs to map to here",
+      updatedVideo: "and here"
     };
   },
   methods: {

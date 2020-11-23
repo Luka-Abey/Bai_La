@@ -67,13 +67,13 @@ const actions = {
 
   //   commit('setPosts', response.data);
   // },
-  async updatePost({ commit }, updatePost) {
+  async updatePost({ commit }, updatedPost) {
     const response = await axios.put(
-      `${url}posts/${updatePost.id}`,
-      updatePost
+      `${url}posts/${updatedPost.id}`,
+      updatedPost
     );
 
-    commit('updatePost', response.data);
+    commit('updatePosts', response.data);
   }
 };
 
@@ -86,7 +86,7 @@ const mutations = {
     (state.posts = state.posts.filter(post => post._id !== id)),
   removeComment: (state, id) =>
     (state.comments = state.comments.filter(comment => comment._id !== id)),  
-  updatePost: (state, updatePost) => {
+  updatePosts: (state, updatePost) => {
     const index = state.posts.findIndex(post => post.id === updatePost.id);
     if (index !== -1) {
       state.posts.splice(index, 1, updatePost);
