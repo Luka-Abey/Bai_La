@@ -7,7 +7,7 @@
         <div class = "post-text" v-html="post.postBody"/>
         <button><img src='../../public/menu.png'></button>
         <button @click="deletePost(post._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
-        <editPost v-bind:post="post.postBody" />
+        <editPost :post="post" />
         <button @click="editPost(post._id)" class="btn btn-edit">edit</button>
       </div>
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
