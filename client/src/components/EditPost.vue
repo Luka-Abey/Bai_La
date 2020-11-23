@@ -5,6 +5,7 @@
         <input class="post-input-form" :value="post.video" type="text">
         <button type = "submit" name="button" class="btn btn-send"><img src='../../public/send.png'></button>
     </form>
+    
   </div>
 </template>
 
@@ -21,8 +22,8 @@ export default {
 
   data() {
     return {
-      updatedPost: "edit text needs to map to here",
-      updatedVideo: "and here"
+      updatedPost: 'new values: this is what edits',
+      updatedVideo: 'and this'
     };
   },
   methods: {
