@@ -7,12 +7,13 @@ const app = express()
 const cors = require('cors')
 const port = 5000
 const session = require('express-session')
-const url = 'http://localhost:8080'
+const url = 'https://localhost:8080'
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
-app.use(session({ secret: 'notagoodsecret' }))
+app.use(session({ secret: 'notagoodsecret', resave: false, saveUninitialized: false }))
 
 // Connect DB
 const db = require('./keys.js').mongoURI
