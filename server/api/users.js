@@ -21,7 +21,19 @@ const requireLogin = (req, res, next) => {
   next()
 }
 
-router.get('/', requireLogin, (req, res) => {
+router.get('/views', async (req, res) => {
+  if (req.session.views) {
+    req.session.views++
+    console.log('yes')
+  } else {
+    req.session.views = 1
+    console.log('no')
+  }
+  const views = req.session.views
+  res.json({ views })
+})
+
+router.get('/', (req, res) => {
   User.find().then(users => res.json(users))
 })
 
@@ -56,9 +68,9 @@ router.post('/login', async (req, res) => {
   const user = (await findAndValidate(username, password)(user)) ? (res.status(200), user) : (res.status(401), false)
   if (user) {
     req.session.user_id = user._id // creates a user id in the session
-//     res.redirect('/')
+    //     res.redirect('/')
   } else {
-//     res.redirect('/login')
+    //     res.redirect('/login')
   }
 })
 
