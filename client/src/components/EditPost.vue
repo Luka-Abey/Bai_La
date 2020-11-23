@@ -1,5 +1,5 @@
 <template>
-
+  <AddPost />
 </template>
 
 template needs:
@@ -10,18 +10,9 @@ input fields prepopulated with current values
 import AddPost from '@/components/AddPost.vue';
 
 export default {
-
-}
-</script>
-
-<style>
-
-</style>
-
-
-<script>
-export default {
-
+  components: {
+    AddPost
+  }
 }
 </script>
 
