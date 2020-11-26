@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "loadtest": "*"
   }
 }
