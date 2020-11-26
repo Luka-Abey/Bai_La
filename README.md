@@ -53,3 +53,5 @@ This project is open-source and community led. Feel free to open any issues, and
 
 ### Testing:
 Unit tests located in server/tests. Currently at 100% coverage.
+
+Load tests (using !npm loadtest peaked at 118 requests a second).
