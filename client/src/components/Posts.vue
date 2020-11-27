@@ -1,11 +1,14 @@
 <template>
   <div>
   <div class="page">
+    
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
       <div class = "post-text-buttons">
         <div class = "post-text" v-html="post.postBody"/>
-        <button @click="deletePost(post._id)" class="btn-warning"><img src='../../public/bin.png'></button>
-        <button @click="editPost(post._id)" class="btn-edit">edit</button>
+        <button><img src='../../public/menu.png'></button>
+        <button @click="deletePost(post._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
+        <editPost :post="post" />
+        <button @click="editPost(post._id)" class="btn btn-edit">edit</button>
       </div>
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
           <div v-html="post.video" />
@@ -16,15 +19,16 @@
         <div v-if="post._id == comment.post">
         <div class ="comment-text" v-html="comment.commentBody" />
           <div>
-            <button v-on:click="deleteComment(comment._id)" class="btn-warning"><img src='../../public/bin.png'></button>
+            <button v-on:click="deleteComment(comment._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
           </div>
         <hr>
         </div>
       </div>
       <form :key="post._id" @submit.prevent="sendComment(post._id)">
+        <!-- test build -->
         <div class="input-form">
           <input v-bind:key="post._id" type ="text" v-model="newComment" placeholder="Write comment here!">
-          <button type = "submit" class="btn-send"><img src='../../public/send.png'></button>
+          <button type = "submit" class="btn btn-send"><img src='../../public/send.png'></button>
         </div>
       </form>
       <hr class="thick-line">
@@ -38,9 +42,15 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import editPost from '@/components/EditPost.vue'
 
 export default {
   name: "Posts",
+
+  components: {
+    editPost
+  },
+
   data() {
     return {
       newComment: ''
@@ -55,6 +65,7 @@ export default {
       this.newComment = ''
     },
     
+
     editPost(post) {
       const updatePost = {
         id: post._id,

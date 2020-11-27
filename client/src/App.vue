@@ -105,6 +105,13 @@ input {
 }
 
 button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn {
   color: rgb(255, 226, 189);
   background-color: #2c3e50;
   display: inline;
@@ -158,11 +165,13 @@ button {
   padding: 10px;
 }
 
-.post-text-buttons {
+.post-input-form {
   display: flex;
 }
 
 li {
   text-align: left;
 }
+
+
 </style>
