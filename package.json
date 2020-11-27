@@ -27,15 +27,18 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "concurrently": "^5.3.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^8.2.1",
     "mongoose": "^5.10.13",
     "mongoose-unique-validator": "^2.0.3",
     "nyc": "^15.1.0",
     "showdown": "^1.9.1",
+    "validator": "^13.1.17",
     "vue-autofocus-directive": "^1.0.4"
   },
   "devDependencies": {
