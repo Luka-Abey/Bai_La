@@ -3,7 +3,7 @@
     <form @submit.prevent="editPost">
        <input class="post-input-form" :value="updatedPost" type ="text">
         <input class="post-input-form" :value="updatedVideo" type="text">
-        <button type = "submit" name="button" class="btn btn-send"><img src='../../public/send.png'></button>
+        <button type = "submit" name="button">confirm edit</button>
     </form>
     
   </div>
