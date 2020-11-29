@@ -23,13 +23,13 @@ export default {
   },
   data() {
     return {}
-  },
-  created() {
-    axios
-      .get(`${url}users/views`)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
   }
+  // created() {
+  //   axios
+  //     .get(`${url}users/views`)
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log(err))
+  // }
 }
 </script>
 
