@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   var conditions = { _id : req.params.id };
-    Post.update(conditions, req.body).then(doc => {
+    Post.updateOne(conditions, req.body).then(doc => {
         if (!doc){
             return res.status(404).end();
         }

@@ -72,7 +72,6 @@ const actions = {
       `${url}posts/${updatedPost.id}`,
       updatedPost
     );
-
     commit('updatePosts', response.data);
   }
 };

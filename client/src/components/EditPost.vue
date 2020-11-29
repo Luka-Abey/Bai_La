@@ -5,12 +5,8 @@
         <input class="post-input-form" :value="updatedVideo" type="text">
         <button type = "submit" name="button">confirm edit</button>
     </form>
-    
   </div>
 </template>
-
-template needs:
-open as a pop up/layered component 
 
 <script>
 import { mapActions } from "vuex";
@@ -30,6 +26,8 @@ export default {
     ...mapActions(["updatePost"]),
     editPost() {
       this.updatePost({postBody: this.updatedPost, video: this.updatedVideo, id: this.post._id});
+      // eslint-disable-next-line
+      console.log(this.updatedPost);
     }
   }
 };
