@@ -52,7 +52,7 @@ And many more, look into [markdown](https://www.markdownguide.org/cheat-sheet) o
 This project is open-source and community led. Feel free to open any issues, and send PRs. Check the [projects](https://github.com/Luka-Abey/socialLife/projects/1) tab for the current todos.
 
 ### Testing:
-Unit tests located in server/tests. Currently at 100% coverage.
+Chai/Mocha unit tests located in server/tests. Currently at 100% coverage.
 
 Load tests (using !npm loadtest) peaked at 118 requests a second.
 
