@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1>Hello</h1>
       <AddPost />
       <Posts />
     </div>

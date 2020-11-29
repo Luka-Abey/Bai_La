@@ -1,8 +1,8 @@
 <template>
   <div>
     <form @submit.prevent="editPost">
-       <input class="post-input-form" :value="post.postBody" type ="text">
-        <input class="post-input-form" :value="post.video" type="text">
+       <input class="post-input-form" :value="updatedPost" type ="text">
+        <input class="post-input-form" :value="updatedVideo" type="text">
         <button type = "submit" name="button" class="btn btn-send"><img src='../../public/send.png'></button>
     </form>
     
@@ -22,8 +22,8 @@ export default {
 
   data() {
     return {
-      updatedPost: 'new values: this is what edits',
-      updatedVideo: 'and this'
+      updatedPost: this.post.postBody,
+      updatedVideo: this.post.video
     };
   },
   methods: {

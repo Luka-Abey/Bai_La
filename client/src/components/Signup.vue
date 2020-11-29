@@ -9,7 +9,6 @@
         Password:
         <input type="password" v-model="password" placeholder="Password">
       <button>Sign up</button>
-      <button>Forgot your password?</button>
       </div>
     </form>
   </div>
