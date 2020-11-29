@@ -1,8 +1,8 @@
 <template>
   <div>
     <form @submit.prevent="editPost">
-       <input class="post-input-form" :value="updatedPost" type ="text">
-        <input class="post-input-form" :value="updatedVideo" type="text">
+       <input class="post-input-form" v-model="postBody" type ="text">
+        <input class="post-input-form" v-model="video" type="text">
         <button type = "submit" name="button">confirm edit</button>
     </form>
   </div>
@@ -18,16 +18,16 @@ export default {
 
   data() {
     return {
-      updatedPost: this.post.postBody,
-      updatedVideo: this.post.video
+      postBody: this.post.postBody,
+      video: this.post.video
     };
   },
   methods: {
     ...mapActions(["updatePost"]),
     editPost() {
-      this.updatePost({postBody: this.updatedPost, video: this.updatedVideo, id: this.post._id});
+      this.updatePost({postBody: this.postBody, video: this.video, id: this.post._id});
       // eslint-disable-next-line
-      console.log(this.updatedPost);
+      console.log(this.postBody);
     }
   }
 };
