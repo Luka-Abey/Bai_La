@@ -11,6 +11,11 @@ router.get('/', (req, res) => {
     .then(posts => res.json(posts))
 });
 
+// router.get('/:id', (req, res) => {
+//   Post.findById(req.params.id)
+//     .then(post => res.json(post))
+// });
+
 router.post('/', (req, res) => {
   const newPost = new Post({
     user: req.body.user,

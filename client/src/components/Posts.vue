@@ -58,23 +58,13 @@ export default {
   },
 
   methods: {
-    ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
+    ...mapActions(["fetchPosts", "fetchIndiPost", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
     
     sendComment(postRef) {
       this.addComment({commentBody: this.newComment, post: postRef});
       this.newComment = ''
-    },
-    
-
-    editPost(post) {
-      const updatePost = {
-        id: post._id,
-        postBody: post.newPost,
-        video: post.newVideo
-      };
-
-      this.updatePost(updatePost);
     }
+    
   },
   computed: mapGetters(["allPosts", "allComments"]),
   created() {

@@ -20,6 +20,14 @@ const actions = {
     commit('setPosts', response.data);
   },
 
+  // async fetchIndiPost({ commit }, id) {
+  //   const response = await axios.get(
+  //     `${url}posts/${id}`
+  //   );
+
+  //   commit('setPost', response.data);
+  // },
+
   async fetchComments({ commit }) {
     const response = await axios.get(
       `${url}comments`
