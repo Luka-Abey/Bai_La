@@ -93,6 +93,7 @@ const mutations = {
     (state.posts = state.posts.filter(post => post._id !== id)),
   removeComment: (state, id) =>
     (state.comments = state.comments.filter(comment => comment._id !== id)),  
+  // should do this from within a specific post, and only update that post ..?
   updatePosts: (state, updatePost) => {
     const index = state.posts.findIndex(post => post.id === updatePost.id);
     if (index !== -1) {
