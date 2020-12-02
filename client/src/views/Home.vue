@@ -11,6 +11,7 @@
 import Posts from '@/components/Posts.vue'
 import AddPost from '@/components/AddPost.vue'
 import axios from 'axios'
+axios.defaults.withCredentials = true
 
 const url = 'http://localhost:5000/api/'
 
@@ -25,10 +26,16 @@ export default {
   },
   created() {
     axios
-      .get(`${url}users/views`)
+      .post(`${url}users/views`)
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
+  // created() {
+  //   axios
+  //     .get(`${url}users/views`)
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log(err))
+  // }
 }
 </script>
 
