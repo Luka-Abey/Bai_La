@@ -31,6 +31,7 @@
             <button type = "submit" class="btn btn-send"><img src='../../public/send.png'></button>
           </div>
         </form>
+        <!-- TO HERE -->
         <hr class="thick-line">
       </div>
     </div>
@@ -58,7 +59,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["fetchPosts", "fetchIndiPost", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
+    ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
     
     sendComment(postRef) {
       this.addComment({commentBody: this.newComment, post: postRef});
