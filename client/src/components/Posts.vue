@@ -24,14 +24,7 @@
             <hr>
           </div>
         </div>
-        <!-- ADD COMMENT COMPONENT GOES HERE -->
-        <form :key="post._id" @submit.prevent="sendComment(post._id)">
-          <div class="input-form">
-            <input v-bind:key="post._id" type ="text" v-model="newComment" placeholder="Write comment here!">
-            <button type = "submit" class="btn btn-send"><img src='../../public/send.png'></button>
-          </div>
-        </form>
-        <!-- TO HERE -->
+          <addComment :post="post" />
         <hr class="thick-line">
       </div>
     </div>
@@ -43,28 +36,31 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import editPost from '@/components/EditPost.vue'
+import editPost from '@/components/EditPost.vue';
+import addComment from '@/components/AddComment.vue';
+
 
 export default {
   name: "Posts",
 
   components: {
-    editPost
+    editPost,
+    addComment
   },
 
-  data() {
-    return {
-      newComment: ''
-    }
-  },
+  // data() {
+  //   return {
+  //     newComment: ''
+  //   }
+  // },
 
   methods: {
     ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
     
-    sendComment(postRef) {
-      this.addComment({commentBody: this.newComment, post: postRef});
-      this.newComment = ''
-    }
+    // sendComment(postRef) {
+    //   this.addComment({commentBody: this.newComment, post: postRef});
+    //   this.newComment = ''
+    // }
     
   },
   computed: mapGetters(["allPosts", "allComments"]),

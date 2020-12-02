@@ -15,18 +15,20 @@ import { mapActions } from "vuex";
 
 export default {
   name: "AddComment",
+
+  props: ['post'],
+
   data() {
     return {
-      newPost: '',
-      newVideo: ''
+      newComment: ''
     };
   },
   methods: {
-    ...mapActions(["addPost"]),
-    sendPost() {
-      this.addPost({postBody: this.newPost, video: this.newVideo});
-      this.newPost = '',
-      this.newVideo = ''
+    ...mapActions(["addComment"]),
+    
+    sendComment() {
+      this.addComment({commentBody: this.newComment, post: this.post._id});
+      this.newComment = ''
     }
   }
 };
