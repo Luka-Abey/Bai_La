@@ -1,7 +1,6 @@
 <template>
   <div>
   <div class="page">
-    
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
       <div class = "post-text-buttons">
         <div class = "post-text" v-html="post.postBody"/>
@@ -28,17 +27,13 @@
         <hr class="thick-line">
       </div>
     </div>
-  
   </div>
-
-  
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import editPost from '@/components/EditPost.vue';
 import addComment from '@/components/AddComment.vue';
-
 
 export default {
   name: "Posts",
@@ -48,21 +43,10 @@ export default {
     addComment
   },
 
-  // data() {
-  //   return {
-  //     newComment: ''
-  //   }
-  // },
-
   methods: {
     ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
-    
-    // sendComment(postRef) {
-    //   this.addComment({commentBody: this.newComment, post: postRef});
-    //   this.newComment = ''
-    // }
-    
   },
+
   computed: mapGetters(["allPosts", "allComments"]),
   created() {
     this.fetchPosts();
