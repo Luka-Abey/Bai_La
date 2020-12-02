@@ -22,7 +22,7 @@
             <hr>
           </div>
         </div>
-          <addComment :post="post" />
+        <addComment :post="post" />
         <hr class="thick-line">
       </div>
     </div>
