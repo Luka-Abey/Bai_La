@@ -4,9 +4,7 @@
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
       <div class = "post-text-buttons">
         <div class = "post-text" v-html="post.postBody"/>
-
         <postMenu :post="post" />
-
       </div>
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
           <div v-html="post.video" />
