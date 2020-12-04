@@ -21,17 +21,17 @@ const requireLogin = (req, res, next) => {
   next()
 }
 
-router.post('/views', async (req, res) => {
-  if (req.session.views) {
-    req.session.views++
-    res.json({ session: true, views: req.session.views })
-  } else {
-    req.session.views = 1
-    console.log(req.session)
-  }
-  const views = req.session.views
-  res.json({ views })
-})
+// router.post('/views', async (req, res) => {
+//   if (req.session.views) {
+//     req.session.views++
+//     res.json({ session: true, views: req.session.views })
+//   } else {
+//     req.session.views = 1
+//     console.log(req.session)
+//   }
+//   const views = req.session.views
+//   res.json({ views })
+// })
 
 router.get('/', (req, res) => {
   User.find().then(users => res.json(users))
