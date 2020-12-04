@@ -9,6 +9,11 @@ const port = 5000
 const session = require('express-session')
 const url = 'https://localhost:8080'
 
+// sort deprecation warnings
+mongoose.set('useNewUrlParser', true)
+mongoose.set('useFindAndModify', false)
+mongoose.set('useCreateIndex', true)
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -17,8 +22,8 @@ app.use(
   session({
     secret: 'notagoodsecret',
     resave: false,
-    saveUninitialized: false
-    // cookie: { maxAge: 1000 * 60 * 60, secure: true }
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60, secure: true, sameSite: 'strict' }
   })
 )
 
@@ -38,9 +43,10 @@ app.use(
 
 // BodyParser
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Mongo db connected...'))
   .catch(err => console.log(err))
 
