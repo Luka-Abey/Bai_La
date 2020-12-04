@@ -31,7 +31,6 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import editPost from '@/components/EditPost.vue';
 import addComment from '@/components/AddComment.vue';
 import postMenu from '@/components/PostMenu.vue';
 
@@ -45,13 +44,12 @@ export default {
   },
 
   components: {
-    editPost,
     addComment,
     postMenu
   },
 
   methods: {
-    ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment", "updatePost"]),
+    ...mapActions(["fetchPosts", "fetchComments", "addComment", "deletePost", "deleteComment"]),
   },
 
   computed: mapGetters(["allPosts", "allComments"]),
