@@ -4,16 +4,9 @@
     <div class = "post" v-bind:key="post._id" v-for="post in allPosts">
       <div class = "post-text-buttons">
         <div class = "post-text" v-html="post.postBody"/>
-        <button><img src='../../public/menu.png'></button>
-       <!-- <button @click="deletePost(post._id)" class="btn btn-warning"> -->
-        <button @click="deletePost(post._id)">
-          <!-- <img src='../../public/bin.png'> -->
-          delete
-        </button>
-        <button v-on:click="isHidden = !isHidden">
-          edit
-        </button>
-        <editPost v-if="!isHidden" :post="post" />
+
+        <postMenu :post="post" />
+
       </div>
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
           <div v-html="post.video" />
@@ -40,6 +33,7 @@
 import { mapGetters, mapActions } from "vuex";
 import editPost from '@/components/EditPost.vue';
 import addComment from '@/components/AddComment.vue';
+import postMenu from '@/components/PostMenu.vue';
 
 export default {
   name: "Posts",
@@ -52,7 +46,8 @@ export default {
 
   components: {
     editPost,
-    addComment
+    addComment,
+    postMenu
   },
 
   methods: {
