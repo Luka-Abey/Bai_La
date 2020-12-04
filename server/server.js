@@ -9,6 +9,13 @@ const port = 5000
 const session = require('express-session')
 const url = 'https://localhost:8080'
 
+// sort deprecation warnings
+mongoose.set('useNewUrlParser', true)
+mongoose.set('useFindAndModify', false)
+mongoose.set('useCreateIndex', true)
+mongoose.set('useUnifiedTopology', true)
+
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -40,7 +47,7 @@ app.use(
 app.use(express.json())
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(db)
   .then(() => console.log('Mongo db connected...'))
   .catch(err => console.log(err))
 

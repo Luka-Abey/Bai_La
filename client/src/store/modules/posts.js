@@ -95,11 +95,11 @@ const mutations = {
     (state.comments = state.comments.filter(comment => comment._id !== id)),  
   // should do this from within a specific post, and only update that post ..?
   updatePosts: (state, updatePost) => {
-    state.posts.findIndex(post => post.id === updatePost.id);
-    // const index = state.posts.findIndex(post => post.id === updatePost.id);
-    // if (index !== -1) {
-    //   state.posts.splice(index, 1, updatePost);
-    // }
+    state.posts.findIndex(post => post._id === updatePost.id);
+    const index = state.posts.findIndex(post => post.id === updatePost.id);
+    if (index !== -1) {
+      state.posts.splice(index, 1, updatePost);
+    }
   }
 };
 
