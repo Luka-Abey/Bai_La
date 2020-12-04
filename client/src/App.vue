@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link> | 
       <router-link to="/about">About</router-link> |
       <router-link to="/login">Login</router-link>
-      <h1>not a social media site <img src="../public/na.png"> </h1>
+      
+      <h1>not a social media site <img src="../public/na.png" /></h1>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -21,7 +22,6 @@
   color: #2c3e50;
   padding-top: 30px;
   padding-bottom: 150px;
-  
 }
 
 body {
@@ -94,24 +94,30 @@ hr {
   opacity: 0.9;
 }
 
-
 input {
-    width: 100%;
-    height: 30px;
-    opacity: 0.5;
-    font-size: 20px;
-    border: 0ch;
-    display: inline-block;
+  width: 100%;
+  height: 30px;
+  opacity: 0.5;
+  font-size: 20px;
+  border: 0ch;
+  display: inline-block;
 }
 
 button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn {
   color: rgb(255, 226, 189);
   background-color: #2c3e50;
   display: inline;
   flex-direction: column;
   align-items: flex-end;
   justify-content: right;
-  width:50px;
+  width: 50px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -158,7 +164,7 @@ button {
   padding: 10px;
 }
 
-.post-text-buttons {
+.post-input-form {
   display: flex;
 }
 

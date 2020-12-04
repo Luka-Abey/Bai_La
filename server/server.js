@@ -1,20 +1,43 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const posts = require('./api/posts');
-const comments = require('./api/comments');
-const users = require('./api/users');
-const app = express();
-const cors = require('cors');
+const express = require('express')
+const mongoose = require('mongoose')
+const posts = require('./api/posts')
+const comments = require('./api/comments')
+const users = require('./api/users')
+const app = express()
+const cors = require('cors')
 const port = 5000
+const session = require('express-session')
+const url = 'https://localhost:8080'
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
+app.use(
+  session({
+    secret: 'notagoodsecret',
+    resave: false,
+    saveUninitialized: false
+    // cookie: { maxAge: 1000 * 60 * 60, secure: true }
+  })
+)
 
 // Connect DB
-const db = require('./keys.js').mongoURI;
+const db = require('./keys.js').mongoURI
 
 // Avoid CORS error
-app.use(cors({origin:true}));
+app.use(
+  cors({
+    // UNCOMMENT BELOW WHEN WORKING ON COOOOOKIES
+
+    // origin: [url],
+    // credentials: true,
+    // exposedHeaders: ['set-cookie']
+  })
+)
 
 // BodyParser
-app.use(express.json());
+app.use(express.json())
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -22,9 +45,8 @@ mongoose
   .catch(err => console.log(err))
 
 // API routes
-app.use('/api/users', users);
-app.use('/api/comments', comments);
-app.use('/api/posts', posts);
-
+app.use('/api/users', users)
+app.use('/api/comments', comments)
+app.use('/api/posts', posts)
 
 app.listen(port, () => console.log(`Server started on port: ${port}`))
