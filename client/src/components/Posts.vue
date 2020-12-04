@@ -5,8 +5,15 @@
       <div class = "post-text-buttons">
         <div class = "post-text" v-html="post.postBody"/>
         <button><img src='../../public/menu.png'></button>
-        <button @click="deletePost(post._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
-        <editPost :post="post" />
+       <!-- <button @click="deletePost(post._id)" class="btn btn-warning"> -->
+        <button @click="deletePost(post._id)">
+          <!-- <img src='../../public/bin.png'> -->
+          delete
+        </button>
+        <button v-on:click="isHidden = !isHidden">
+          edit
+        </button>
+        <editPost v-if="!isHidden" :post="post" />
       </div>
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
           <div v-html="post.video" />
@@ -36,6 +43,12 @@ import addComment from '@/components/AddComment.vue';
 
 export default {
   name: "Posts",
+
+  data() {
+    return {
+    isHidden: true
+    }
+  },
 
   components: {
     editPost,
