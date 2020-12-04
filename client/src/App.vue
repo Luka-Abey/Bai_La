@@ -122,16 +122,9 @@ button {
   cursor: pointer;
 }
 
-.btn-warning {
+.btn-generic {
   width: 35px;
   height: 30px;
-  /* background-color: #502c2c; */
-}
-
-.btn-edit {
-  width: 35px;
-  height: 30px;
-  /* background-color: #37502c; */
 }
 
 .btn-send {
