@@ -18,14 +18,14 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
-app.use(
-  session({
-    secret: 'notagoodsecret',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 1000 * 60 * 60, secure: true, sameSite: 'strict' }
-  })
-)
+// app.use(
+//   session({
+//     secret: 'notagoodsecret',
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { maxAge: 1000 * 60 * 60, secure: true, sameSite: 'strict' }
+//   })
+// )
 
 // Connect DB
 const db = require('./keys.js').mongoURI
