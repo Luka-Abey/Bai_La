@@ -6,7 +6,7 @@
         Password:
         <input type="password" v-model="password" placeholder="Password">
       <button @click.prevent="loginSubmit">Submit</button>
-      | | 
+      |
       <button>Forgot password</button>
     </form>
     {{isAuthenticated}}
