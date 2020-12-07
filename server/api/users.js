@@ -3,7 +3,7 @@ const router = express.Router()
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-
+const passport = require('passport')
 
 
 const requireLogin = (req, res, next) => {
@@ -58,25 +58,8 @@ router.post('/signup', async (req, res) => {
 
 
 
-const findAndValidate = async (username, password) => {
-  const user = await User.find({ username })
-  if (user.length > 0) {
-    const isValid = await bcrypt.compare(password, user[0].password)
-    return isValid ? user : false
-  } else {
-    return false
-  }
-}
-
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body
-  const user = (await findAndValidate(username, password)(user)) ? (res.status(200), user) : (res.status(401), false)
-  if (user) {
-    req.session.user_id = user._id // creates a user id in the session
-        res.redirect('/')
-  } else {
-        res.redirect('/login')
-  }
+  passport.authenticate('local', )
 })
 
 
