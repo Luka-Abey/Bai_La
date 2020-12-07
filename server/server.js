@@ -47,7 +47,7 @@ const db = require('./keys.js').mongoURI
 // Avoid CORS error
 app.use(
   cors({
-    origin: [url],
+    origin: url,
     credentials: true
     // exposedHeaders: ['set-cookie']
   })
