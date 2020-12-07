@@ -6,8 +6,11 @@
         Password:
         <input type="password" v-model="password" placeholder="Password">
       <button @click.prevent="loginSubmit">Submit</button>
-      <button>Forgot your password?</button>
+      | | 
+      <button>Forgot password</button>
     </form>
+    {{isAuthenticated}}
+    <br>
     {{StateUser}}
   </div>
 </template>
