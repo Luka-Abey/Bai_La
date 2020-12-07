@@ -65,13 +65,14 @@ router.post('/signup', (req, res) => {
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body
-  const user = (await findAndValidate(username, password)(user)) ? (res.status(200), user) : (res.status(401), false)
-  if (user) {
-    req.session.user_id = user._id // creates a user id in the session
+  console.log(username, password)
+  // const user = (await findAndValidate(username, password)(user)) ? (res.status(200), user) : (res.status(401), false)
+  // if (user) {
+  //   req.session.user_id = user._id // creates a user id in the session
     //     res.redirect('/')
-  } else {
+  // } else {
     //     res.redirect('/login')
-  }
+  // }
 })
 
 router.delete('/:id', (req, res) => {

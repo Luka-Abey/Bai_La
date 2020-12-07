@@ -25,6 +25,13 @@ const actions = {
     commit('newUser', response.data);
   },
 
+  async loginUser({ commit }, user) {
+    const response = await axios.post(
+      `${url}users/login`, user
+    );
+    commit('loggedIn', response.data)
+  },
+
 
   async deletePost({ commit }, id) {
     await axios.delete(`${url}posts/${id}`);

@@ -1,11 +1,11 @@
 <template>
   <div class="page input-form about">
-    <form action="">
+    <form>
        Username:
        <input v-autofocus type ="text" v-model="username" placeholder="Username">
         Password:
         <input type="password" v-model="password" placeholder="Password">
-      <button>Submit</button>
+      <button @click.prevent="loginSubmit">Submit</button>
       <button>Forgot your password?</button>
     </form>
   </div>
@@ -15,6 +15,7 @@
 import Vue from 'vue';
 import autofocus from 'vue-autofocus-directive';
 Vue.directive('autofocus', autofocus);
+import { mapActions } from "vuex";
 
 export default {
   name: 'Login',
@@ -24,6 +25,16 @@ export default {
       username: '',
       password: ''
     }
+  },
+
+  methods: {
+    ...mapActions(["loginUser"]),
+
+    loginSubmit() {
+      this.loginUser({username: this.username, password: this.password});
+      this.username='',
+      this.password=''
+      }
   }
 
 }
