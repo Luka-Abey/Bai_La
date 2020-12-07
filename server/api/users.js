@@ -41,26 +41,19 @@ router.get('/:id', (req, res) => {
 
 
 
-router.post('/signup', (req, res) => {
-  bcrypt.hash(req.body.password, 12, (err, hash) => {
-    if (err) {
-      return res.status(500).json({
-        error: err
-      })
-    } else {
-      const newUser = new User({
-        username: req.body.username,
-        email: req.body.email,
-        password: hash
-      })
-      newUser
-        .save()
-        .then(result => {
-          res.status(201).json({ success: true, result })
-        })
-        .catch(err => res.status(500).json({ success: false, err: err }))
-    }
-  })
+router.post('/signup', async (req, res) => {
+  try {
+    const{username, password, email} = req.body
+    const user = new User({
+      username,
+      email
+    })
+    const registeredUser = await User.register(user, password)
+  }
+  catch(err){
+    console.log(err)
+    res.send(err)
+  }
 })
 
 
