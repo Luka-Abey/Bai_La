@@ -59,8 +59,9 @@ router.post('/signup', async (req, res) => {
 
 
 router.post('/login', async (req, res) => {
-  passport.authenticate('local',
+  passport.authenticate('local', 
   // here would be the redirect
+  res.json({success: true, hello, user: req.user})
   )
 })
 

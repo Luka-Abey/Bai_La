@@ -8,6 +8,7 @@
       <button @click.prevent="loginSubmit">Submit</button>
       <button>Forgot your password?</button>
     </form>
+    {{StateUser}}
   </div>
 </template>
 
@@ -15,7 +16,7 @@
 import Vue from 'vue';
 import autofocus from 'vue-autofocus-directive';
 Vue.directive('autofocus', autofocus);
-import { mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: 'Login',
@@ -35,7 +36,9 @@ export default {
       this.username='',
       this.password=''
       }
-  }
+  },
+
+  computed: mapGetters(["isAuthenticated", "StatePosts", "StateUser"])
 
 }
 </script>

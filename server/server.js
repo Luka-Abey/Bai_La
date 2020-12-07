@@ -7,7 +7,7 @@ const app = express()
 const cors = require('cors')
 const port = 5000
 const session = require('express-session')
-const url = 'https://localhost:8080'
+const url = 'http://localhost:8080'
 const passport = require('passport')
 const localStrategy = require('passport-local')
 const UserSchema = require('./models/User')
@@ -47,10 +47,8 @@ const db = require('./keys.js').mongoURI
 // Avoid CORS error
 app.use(
   cors({
-    // UNCOMMENT BELOW WHEN WORKING ON COOOOOKIES
-
-    // origin: [url],
-    // credentials: true,
+    origin: [url],
+    credentials: true
     // exposedHeaders: ['set-cookie']
   })
 )
