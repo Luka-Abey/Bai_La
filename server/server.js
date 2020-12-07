@@ -8,6 +8,9 @@ const cors = require('cors')
 const port = 5000
 const session = require('express-session')
 const url = 'https://localhost:8080'
+const passport = require('passport')
+const localStrategy = require('passport-local')
+const UserSchema = require('./models/User')
 
 // sort deprecation warnings
 mongoose.set('useNewUrlParser', true)
@@ -28,6 +31,15 @@ app.use(
     // cookie: { maxAge: 1000 * 60 * 60, secure: true }
   })
 )
+
+app.use(passport.initialize())
+app.use(passport.session())
+
+passport.use(new localStrategy(UserSchema.authenticate))
+
+passport.serializeUser(UserSchema.serializeUser())
+
+passport.deserializeUser(UserSchema.deserializeUser())
 
 // Connect DB
 const db = require('./keys.js').mongoURI

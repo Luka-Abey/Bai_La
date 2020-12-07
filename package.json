@@ -39,6 +39,7 @@
     "nyc": "^15.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
     "showdown": "^1.9.1",
     "validator": "^13.1.17",
     "vue-autofocus-directive": "^1.0.4"
