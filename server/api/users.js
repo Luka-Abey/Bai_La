@@ -58,9 +58,18 @@ router.post('/signup', async (req, res) => {
 
 
 
+const getUserPosts = (user) => {
+  Post.find(user.id == user)
+    .sort({ date: -1 })
+    .then(posts => res.json(posts))
+};
+
+
+
 router.post('/login', 
   passport.authenticate('local'), 
   async (req, res) => {
+  // getUserPosts(req.user)
   // here would be the redirect
   res.json({success: true, hello: 'hello', user: req.user})
   
@@ -71,7 +80,7 @@ router.post('/login',
 router.delete('/:id', (req, res) => {
   User.findById(req.params.id)
     .then(user => user.remove().then(() => res.json({ success: true })))
-    .catch(err => res.status(500).json({ success: false }))
+    .catch(err => res.status(500).json({ success: false, error: err }))
 })
 
 
