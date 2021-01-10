@@ -8,6 +8,7 @@
       </div>
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
           <div v-html="post.video" />
+          <vue-media-embed class="media" :source="post.video" />
         </span>
         <!-- from now, input url instead of youtube code been using previously -->
         <!-- <vue-media-embed class="media" source="https://vimeo.com/498010744"/> -->

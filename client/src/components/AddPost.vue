@@ -3,7 +3,7 @@
     <form @submit.prevent="sendPost">
       <div>
         <input class="post-input-form" type ="text" v-model="newPost" placeholder="Write here!">
-        <input class="post-input-form" type="text" v-model="newVideo" placeholder="Video ID links here!">
+        <input class="post-input-form" type="text" v-model="newVideo" placeholder="Video links here!">
         <button type = "submit" name="button" class="btn btn-send"><img src='../../public/send.png'></button>
       </div>
     </form>
