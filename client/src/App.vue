@@ -76,6 +76,10 @@ iframe {
   width: 100%;
 }
 
+.media {
+  width: 100%;
+}
+
 .comment-text {
   font-size: 20px;
   text-align: left;

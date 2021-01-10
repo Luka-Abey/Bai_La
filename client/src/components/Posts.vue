@@ -9,6 +9,14 @@
         <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
           <div v-html="post.video" />
         </span>
+        <!-- from now, input url instead of youtube code been using previously -->
+        <!-- <vue-media-embed class="media" source="https://vimeo.com/498010744"/> -->
+        <!--
+        need to try get working with soundcloud and mixcloud      
+        <vue-media-embed class="media" source="https://www.mixcloud.com/sableradio/dj-babygod-7121/"/>
+        <vue-media-embed class="media" source="https://soundcloud.com/avigad/red-light-radio?fbclid=IwAR106Hl0yhSIrWjWbiLAtSDT_LmwQAGX3jAYS2-a7awwp81CEB-r98JE7l4"/> 
+        -->
+
       <hr>    
       
       <div class = "comment" v-bind:key="comment._id" v-for="comment in allComments">
