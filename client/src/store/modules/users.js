@@ -2,10 +2,13 @@ import axios from 'axios';
 const url = 'http://localhost:5000/api/';
 
 const state = {
-  user: []
+  user: null
 };
 
 const getters = {
+  isAuthenticated: state => !!state.user,    
+  StatePosts: state => state.posts,
+  StateUser: state => state.user,
 };
 
 const actions = {
@@ -23,6 +26,13 @@ const actions = {
     );
 
     commit('newUser', response.data);
+  },
+
+  async loginUser({ commit }, user) {
+    const response = await axios.post(
+      `${url}users/login`, user
+    );
+    commit('loggedIn', response.data)
   },
 
 
@@ -52,6 +62,9 @@ const mutations = {
     if (index !== -1) {
       state.posts.splice(index, 1, updatePost);
     }
+  },
+  loggedIn: (state, username) => {
+    state.user = username
   }
 };
 

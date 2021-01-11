@@ -6,16 +6,30 @@
         <div class = "post-text" v-html="post.postBody"/>
         <postMenu :post="post" />
       </div>
-        <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
-          <div v-html="post.video" />
+        <span v-if="post.video">
+          <!-- <div v-html="post.video" /> deprecated method --> 
+          <vue-media-embed class="media" :source="post.video" />
         </span>
+        <!-- from now, input url instead of youtube code been using previously -->
+        <!-- <vue-media-embed class="media" source="https://vimeo.com/498010744"/> -->
+        <!--
+        need to try get working with soundcloud and mixcloud - soundcloud only works with old-style urls.
+        look at their respective apis.   
+        <vue-media-embed class="media" source="https://www.mixcloud.com/sableradio/dj-babygod-7121/"/>
+        <vue-media-embed class="media" source="https://soundcloud.com/avigad/red-light-radio?fbclid=IwAR106Hl0yhSIrWjWbiLAtSDT_LmwQAGX3jAYS2-a7awwp81CEB-r98JE7l4"/> 
+        -->
+
       <hr>    
       
       <div class = "comment" v-bind:key="comment._id" v-for="comment in allComments">
         <div v-if="post._id == comment.post">
           <div class ="comment-text" v-html="comment.commentBody" />
             <div>
-              <button v-on:click="deleteComment(comment._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
+              <button v-on:click="deleteComment(comment._id)" class="btn btn-warning">
+                <!-- <img src='../../public/bin.png'> -->
+                DEL
+                ETE
+              </button>
             </div>
             <hr>
           </div>

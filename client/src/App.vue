@@ -72,7 +72,7 @@ h3 {
   display: inline;
 }
 
-iframe {
+.media {
   width: 100%;
 }
 

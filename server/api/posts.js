@@ -11,16 +11,14 @@ router.get('/', (req, res) => {
     .then(posts => res.json(posts))
 });
 
-// router.get('/:id', (req, res) => {
-//   Post.findById(req.params.id)
-//     .then(post => res.json(post))
-// });
+
 
 router.post('/', (req, res) => {
   const newPost = new Post({
     user: req.body.user,
     postBody: converter.makeHtml(req.body.postBody),
-    video: `<iframe src=https://www.youtube.com/embed/${req.body.video} frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>`
+    // video: `<iframe src=https://www.youtube.com/embed/${req.body.video} frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>`
+    video: req.body.video
   });
   newPost.save().then(post => res.json(post));
 });

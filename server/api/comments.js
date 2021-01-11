@@ -21,7 +21,6 @@ router.post('/', (req, res) => {
   newComment.save().then(comment => res.json(comment));
 });
 
-
 // PUT
 // router.put('/:id', (req, res) => {
 //   const newComment = new Comment({
