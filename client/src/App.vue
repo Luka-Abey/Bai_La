@@ -72,10 +72,6 @@ h3 {
   display: inline;
 }
 
-iframe {
-  width: 100%;
-}
-
 .media {
   width: 100%;
 }
