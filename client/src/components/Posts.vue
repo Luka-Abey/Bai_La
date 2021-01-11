@@ -24,7 +24,11 @@
         <div v-if="post._id == comment.post">
           <div class ="comment-text" v-html="comment.commentBody" />
             <div>
-              <button v-on:click="deleteComment(comment._id)" class="btn btn-warning"><img src='../../public/bin.png'></button>
+              <button v-on:click="deleteComment(comment._id)" class="btn btn-warning">
+                <!-- <img src='../../public/bin.png'> -->
+                DEL
+                ETE
+              </button>
             </div>
             <hr>
           </div>
