@@ -13,7 +13,8 @@
         <!-- from now, input url instead of youtube code been using previously -->
         <!-- <vue-media-embed class="media" source="https://vimeo.com/498010744"/> -->
         <!--
-        need to try get working with soundcloud and mixcloud      
+        need to try get working with soundcloud and mixcloud - soundcloud only works with old-style urls.
+        look at their respective apis.   
         <vue-media-embed class="media" source="https://www.mixcloud.com/sableradio/dj-babygod-7121/"/>
         <vue-media-embed class="media" source="https://soundcloud.com/avigad/red-light-radio?fbclid=IwAR106Hl0yhSIrWjWbiLAtSDT_LmwQAGX3jAYS2-a7awwp81CEB-r98JE7l4"/> 
         -->
