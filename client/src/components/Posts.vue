@@ -6,7 +6,7 @@
         <div class = "post-text" v-html="post.postBody"/>
         <postMenu :post="post" />
       </div>
-        <span v-if="post.video !== '<iframe src=https://www.youtube.com/embed/ frameborder=0 allow=accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>'">
+        <span v-if="post.video">
           <!-- <div v-html="post.video" /> deprecated method --> 
           <vue-media-embed class="media" :source="post.video" />
         </span>
